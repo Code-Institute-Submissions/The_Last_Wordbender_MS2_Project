@@ -3,14 +3,17 @@
 
 body {
     font-family: "Mate+SC", sans-serif;
-}
-
-.align-center {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .no-padding {
     padding: 0;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
 
 /*----------------------Landing Page*/
@@ -36,6 +39,10 @@ body {
     font-size: 22px;
     text-align: center;
     list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
 #landing-page-nav li a {
