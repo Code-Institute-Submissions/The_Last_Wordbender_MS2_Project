@@ -4,6 +4,14 @@ body {
     font-family: "Kalam", sans-serif;
 }
 
+.align-center {
+    text-align: center;
+}
+
+.no-padding {
+    padding: 0;
+}
+
 /*----------------------Landing Page*/
 
 .main-background {
@@ -18,6 +26,7 @@ body {
 .landing-page-h1 {
     font-size: 45px;
     text-align: center;
+    color: #fff;
 }
 
 #landing-page-nav {
@@ -30,6 +39,14 @@ body {
 #landing-page-nav li a {
     text-decoration: none;
     color: inherit;
+}
+
+.active {
+    color: #fff;
+}
+
+.inactive {
+    color: #8c8c8c;
 }
 
 /*...................Anagram Page*/
