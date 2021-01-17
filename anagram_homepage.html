@@ -13,112 +13,116 @@
 <script type="text/javascript" src="assets/js/anagram.js"></script>
 <title>Anagram Atlantis</title>
 </head>
-<body class="anagram-background">
-    <div>
-        <div class="row no-gutters anagram-page">
-            <div class="col">
-                <h1 class="landing-page-h1">Anagram Atlantis</h1>
-            </div>
-        </div>    
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6 offset-3 nav-item">
-                    <button id="start-btn"><a href="" class="main-menu-btn">Start Game</a></button>
-                </div>
-                <div class="col-6 offset-3 nav-item">
-                    <span>Sound</span>
-                    <button class="btn btn-secondary sound-on">On</button><button class="btn btn-secondary sound-off">Off</button>
-                </div>
-                <div class="col-6 offset-3 nav-item">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Difficulty
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button id="btn-easy" class="dropdown-item" href="#">Easy</button>
-                            <button id="btn-medium" class="dropdown-item" href="#">Medium</button>
-                            <button id="btn-hard" class="dropdown-item" href="#">Hard</button>
+<body >
+    <main class="anagram-background">
+        <section class="glass">
+            <div >
+                <div class="row no-gutters anagram-page">
+                    <div class="col">
+                        <h1 class="landing-page-h1">Anagram Atlantis</h1>
+                    </div>
+                </div>    
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6 offset-3 nav-item">
+                            <button id="start-btn"><a href="" class="main-menu-btn">Start Game</a></button>
+                        </div>
+                        <div class="col-6 offset-3 nav-item">
+                            <span>Sound</span>
+                            <button class="btn btn-secondary sound-on">On</button><button class="btn btn-secondary sound-off">Off</button>
+                        </div>
+                        <div class="col-6 offset-3 nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Difficulty
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button id="btn-easy" class="dropdown-item" href="#">Easy</button>
+                                    <button id="btn-medium" class="dropdown-item" href="#">Medium</button>
+                                    <button id="btn-hard" class="dropdown-item" href="#">Hard</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 offset-3 nav-item">
+                            <button class="main-menu-btn" id="high-scores">High Scores</button>
+                        </div>
+                        <div class="col-6 offset-3 nav-item">
+                            <button class="main-menu-btn" id="how-to-play">How To Play</button>
+                        </div>
+                        <div class="col-6 offset-3 nav-item">
+                            <button class="btn btn-secondary back-btn"><a href="index.html">Back</a></button>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 offset-3 nav-item">
-                    <button class="main-menu-btn" id="high-scores">High Scores</button>
-                </div>
-                <div class="col-6 offset-3 nav-item">
-                    <button class="main-menu-btn" id="how-to-play">How To Play</button>
-                </div>
-                <div class="col-6 offset-3 nav-item">
-                    <button class="btn btn-secondary back-btn"><a href="index.html">Back</a></button>
-                </div>
+                </div>    
             </div>
-        </div>    
-    </div>
-    <div class="container-fluid base-modal htp-modal">
-        <h3 class="modal-h3">How To Play</h3>
-        <p>The first destination of Ayo's(the Last Word Bender) enternal search takes him to the depth of Yemoja's marvellous Atlantis kingdom.</p>
-        <p>Here you must solve the anagram puzzles to continue on your journey</p>
-        <p>Anagrams are words and phrases where the letters are scrambled and you must use the given clue and your intellect to produce the correct word or phrase.</p>
-        <p>The quicker you answer the higher your score will be...</p>
-        <div class="col-12"><button class="close-btn btn btn-secondary">Close</button></div>
-    </div>
-    <div class="container-fluid base-modal high-score-modal">
-        <div class="row">
-            <div class="col-12">
-                <h3 class="modal-h3">Your High Scores</h3>
+            <div class="container-fluid base-modal htp-modal">
+                <h3 class="modal-h3">How To Play</h3>
+                <p>The first destination of Ayo's(the Last Word Bender) enternal search takes him to the depth of Yemoja's marvellous Atlantis kingdom.</p>
+                <p>Here you must solve the anagram puzzles to continue on your journey</p>
+                <p>Anagrams are words and phrases where the letters are scrambled and you must use the given clue and your intellect to produce the correct word or phrase.</p>
+                <p>The quicker you answer the higher your score will be...</p>
+                <div class="col-12"><button class="close-btn btn btn-secondary">Close</button></div>
             </div>
-            <div class="col-12">
+            <div class="container-fluid base-modal high-score-modal">
                 <div class="row">
-                    <div class="col-4">
-                        <span class="hs-list">1st</span>
+                    <div class="col-12">
+                        <h3 class="modal-h3">Your High Scores</h3>
                     </div>
-                    <div class="col-4">
-                        <span id="score-1">0</span>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <span class="hs-list">1st</span>
+                            </div>
+                            <div class="col-4">
+                                <span id="score-1">0</span>
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <span class="hs-list">2nd</span>
+                            </div>
+                            <div class="col-4">
+                                <span id="score-2">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <span class="hs-list">3rd</span>
+                            </div>
+                            <div class="col-4">
+                                <span id="score-3">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <span class="hs-list">4th</span>
+                            </div>
+                            <div class="col-4">
+                                <span id="score-4">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <span class="hs-list">5th</span>
+                            </div>
+                            <div class="col-4">
+                                <span id="score-5">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12"><button class="close-btn btn btn-secondary">Close</button></div>
                 </div>
             </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-4">
-                        <span class="hs-list">2nd</span>
-                    </div>
-                    <div class="col-4">
-                        <span id="score-2">0</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-4">
-                        <span class="hs-list">3rd</span>
-                    </div>
-                    <div class="col-4">
-                        <span id="score-3">0</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-4">
-                        <span class="hs-list">4th</span>
-                    </div>
-                    <div class="col-4">
-                        <span id="score-4">0</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-4">
-                        <span class="hs-list">5th</span>
-                    </div>
-                    <div class="col-4">
-                        <span id="score-5">0</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12"><button class="close-btn btn btn-secondary">Close</button></div>
-        </div>
-    </div>   
+        </section>    
+    </main>   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
