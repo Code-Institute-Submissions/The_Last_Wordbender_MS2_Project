@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/anagram.js"></script>
 <title>Anagram Atlantis</title>
 </head>
 <body class="anagram-background">
@@ -42,16 +45,19 @@
                     <button class="main-menu-btn" id="high-scores">High Scores</button>
                 </div>
                 <div class="col-6 offset-3 nav-item">
-                    <button class="main-menu-btn" id="how-to-play">How to Play</button>
+                    <button class="main-menu-btn" id="how-to-play">How To Play</button>
+                </div>
+                <div class="col-6 offset-3 nav-item">
+                    <button class="btn btn-secondary back-btn"><a href="index.html">Back</a></button>
                 </div>
             </div>
         </div>    
     </div>
-    <footer class="container-fluid">
-        <div>
-            <button class="btn btn-secondary back-btn"><a href="index.html">Back</a></button>
-        </div>
-    </footer>    
+    <div class="base-modal htp-modal">
+        <h3 class="modal-h3">How To Play</h3>
+        <p></p>
+        <div class="col-12"><button class="close-btn btn btn-secondary">Close</button></div>
+    </div>   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
