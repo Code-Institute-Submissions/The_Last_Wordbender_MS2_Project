@@ -20,13 +20,20 @@ body {
 
 /*----------------------Landing Page*/
 
-.main-background {
-    width: 100%;
-    height: 100%;
-    background: url(../images/index_page_background.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+main {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #1a1a1a, #bfbfbf);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass {
+    background: #fff;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+    border-radius: 20px;
 }
 
 .landing-page-h1 {
