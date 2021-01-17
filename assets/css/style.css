@@ -135,3 +135,7 @@ li {
     margin: 15px 0 15px 0;
     color: #fff;
 }
+
+.nav-item {
+    text-align: center;
+}
