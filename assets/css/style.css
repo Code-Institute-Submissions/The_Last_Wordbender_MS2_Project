@@ -34,6 +34,15 @@ main {
     width: 60%;
     background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.3));
     border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.wordbender-img {
+    background-image: url(../images/last_word_bender.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: +3;
 }
 
 .landing-page-h1 {
