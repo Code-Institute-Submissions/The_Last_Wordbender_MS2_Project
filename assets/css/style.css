@@ -16,10 +16,7 @@ body {
     text-transform: uppercase;
 }
 
-li a {
-    text-decoration: none;
-    color: inherit;
-}
+
 
 /*----------------------Landing Page*/
 
@@ -48,6 +45,11 @@ li a {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+}
+
+#landing-page-nav li a {
+    text-decoration: none;
+    color: inherit;
 }
 
 li {
@@ -122,6 +124,11 @@ li {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+}
+
+#anagram-page-nav li a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .back-btn {
