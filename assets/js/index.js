@@ -2,7 +2,7 @@ $(document).ready(function() {
     $(".inactive").click(function() {
         $(".base-modal").addClass("bg-active-modal");
     });
-    $(".modal-close").click(function() {
+    $(".close-btn").click(function() {
         $(".base-modal").removeClass("bg-active-modal");
     });
 });

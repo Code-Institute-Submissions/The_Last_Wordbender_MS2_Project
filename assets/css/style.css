@@ -91,14 +91,6 @@ li {
     flex-direction: column;
 }
 
-.modal button {
-    padding: 10px 30px;
-    color: #fff;
-    background-color: red;
-    border: none;
-    cursor: pointer;
-}
-
 .modal-close {
     position: absolute;
     font-weight: bold;
@@ -146,7 +138,18 @@ li {
     width: 45%;
     height: 45%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.high-score-modal {
+    background-color: #fff;
+    position: relative;
+    width: 45%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
