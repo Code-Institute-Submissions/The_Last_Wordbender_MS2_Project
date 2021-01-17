@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".inactive-modal").click(function() {
+    $(".inactive").click(function() {
         $(".inactive-modal-bg").addClass("bg-active-modal");
     });
     $(".modal-close").click(function() {

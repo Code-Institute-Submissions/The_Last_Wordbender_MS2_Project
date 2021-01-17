@@ -16,6 +16,11 @@ body {
     text-transform: uppercase;
 }
 
+li a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /*----------------------Landing Page*/
 
 .main-background {
@@ -43,11 +48,6 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-}
-
-#landing-page-nav li a {
-    text-decoration: none;
-    color: inherit;
 }
 
 li {
@@ -89,6 +89,14 @@ li {
     flex-direction: column;
 }
 
+.modal button {
+    padding: 10px 30px;
+    color: #fff;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+}
+
 .modal-close {
     position: absolute;
     font-weight: bold;
@@ -105,10 +113,18 @@ li {
     background-repeat: no-repeat;
 }
 
-.modal button {
-    padding: 10px 30px;
+#anagram-page-nav {
+    text-decoration: none;
+    font-size: 22px;
+    text-align: center;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.back-btn {
+    margin: 15px 0 15px 0;
     color: #fff;
-    background-color: red;
-    border: none;
-    cursor: pointer;
 }
