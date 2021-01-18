@@ -171,3 +171,23 @@ li {
     align-items: center;
     flex-direction: column;
 }
+
+/*...................Gameplay page*/
+
+.green-timer {
+    background-color: #00cc00;
+}
+
+.yellow-timer {
+    background-color: #ffff00;
+}
+
+.red-timer {
+    background-color: #ff0000;
+}
+
+#timer {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
