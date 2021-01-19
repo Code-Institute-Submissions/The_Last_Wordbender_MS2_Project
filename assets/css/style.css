@@ -179,6 +179,13 @@ li {
     flex-direction: column;
 }
 
+.main-menu-btn {
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #8c1aff;
+    padding: 5px 5px 5px 5px;
+}
+
 /*...................Gameplay page*/
 
 .green-timer {
