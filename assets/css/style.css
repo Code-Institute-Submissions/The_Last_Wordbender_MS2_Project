@@ -116,6 +116,13 @@ li {
     font-weight: bold;
 }
 
+.landing-btn {
+    margin-top: 30px;
+    border-radius: 15px;
+    background-color: #ffaa00;
+    padding: 10px 10px 10px 10px;
+}
+
 /*...................Anagram Page*/
 
 .anagram-background {
