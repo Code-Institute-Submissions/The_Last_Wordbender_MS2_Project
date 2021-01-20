@@ -106,8 +106,9 @@ li {
     position: relative;
     width: 15%;
     height: 15%;
+    border-radius: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -115,6 +116,12 @@ li {
 .modal-close {
     position: absolute;
     font-weight: bold;
+}
+
+.close-btn {
+    background-color: #ff3300;
+    padding: 2px 2px 2px 2px;
+    border-radius: 15px;
 }
 
 .landing-btn {
