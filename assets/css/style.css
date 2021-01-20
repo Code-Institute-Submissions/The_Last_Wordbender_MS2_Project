@@ -168,6 +168,8 @@ li {
 
 .nav-item {
     text-align: center;
+    font-size: 16px;
+    color: #fff;
 }
 
 .htp-modal {
@@ -176,9 +178,12 @@ li {
     width: 45%;
     height: 45%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    font-size: 12px;
+    border-radius: 20px;
+    background-color: #ffff80;
 }
 
 .high-score-modal {
@@ -187,9 +192,12 @@ li {
     width: 45%;
     height: 45%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    font-size: 12px;
+    border-radius: 20px;
+    background-color: #ffff80;
 }
 
 .main-menu-btn {
