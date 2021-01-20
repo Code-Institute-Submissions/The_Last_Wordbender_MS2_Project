@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&display=swap');
 
 * {
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: "Mate+SC", sans-serif;
+    font-family: "Fondamento", sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -102,7 +102,7 @@ li {
 }
 
 .inactive-modal {
-    background-color: #fff;
+    background-color: #ffff80;
     position: relative;
     width: 15%;
     height: 15%;
@@ -122,6 +122,11 @@ li {
     background-color: #ff3300;
     padding: 2px 2px 2px 2px;
     border-radius: 15px;
+    font-size: 15px
+}
+
+.landing-page-h5 {
+    font-size: 15px;
 }
 
 .landing-btn {
