@@ -1,13 +1,7 @@
-var easyGameWords = ["calm", "lantern", "hammer", "divine", "emotion", "rotation", "karma", "revenge", "shipwreck", "poetry"]
-var easyGameClues = ["peace", "guiding light", "a workman's tool", "holy", "feelings", "circular", "what comes around goes around", "payback", "the Titanic", "... in motion"]
+var easyGame = [["calm", "peace"], ["lantern", "guiding light"], ["blemish", "imperfection"], ["divine", "holy"], ["emotion", "feelings"], ["rotation", "circular"], ["karma", "what comes around goes around"], ["revenge", "payback"], ["shipwreck", "the Titanic"], ["poetry", "... in motion"]]
 
-var mediumGameWords = ["rejoice", "elevate", "invulnerable", "liberty", "scarce", "zealot", "heretic", "subordinate", "citadel", "paramount"]
-var mediumGameClues = ["celebrate", "higher", "immune to damage", "freedom", "hard to find", "a true fanatic", "a blasphemous person", "member of the rank and file", "fortress", "important"]
+var mediumGame = [["rejoice", "celebrate"], ["elevate", "higher"], ["invulnerable", "can't be hurt"], ["liberty", "freedom"], ["scarce", "hard to find"], ["zealot", "a true fanatic"], ["heretic", "a blasphemous person"], ["subordinate", "member of the rank and file"], ["citadel", "fortress"], ["paramount", "important"]]
 
-var hardGameWords = ["tyrannical", "meticulous", "miniscule", "flagrant", "juxtaposition", "paradox", "philanthropic", "impervious", "emphatic", "prehistoric" ]
-var hardGameClues = ["oppressive", "in great detail", "tiny", "brazen wrongdoing", "direct comparison", "a contradiction", "pursuits of charity", "no entry", "forceful", "time of the dinosaurs"]
+var hardGame = [["tyrannical", "oppressive"], ["meticulous", "in great detail"], ["miniscule", "tiny"], ["flagrant", "brazen wrongdoing"], ["juxtaposition", "side by side comparison"], ["paradox", "a contradiction"], ["philanthropic", "charitable intentions"], ["impervious", "no entry"], ["emphatic", "forceful"], ["prehistoric", "time of the dinosaurs"]]
 
-function anagram() {
-    console.log(easyGame.splice(0));
-    
-}
+console.log(hardGame[0][0].split(''))
