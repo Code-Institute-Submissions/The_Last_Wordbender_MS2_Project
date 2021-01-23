@@ -4,4 +4,21 @@ var mediumGame = [["rejoice", "celebrate"], ["elevate", "higher"], ["invulnerabl
 
 var hardGame = [["tyrannical", "oppressive"], ["meticulous", "in great detail"], ["miniscule", "tiny"], ["flagrant", "brazen wrongdoing"], ["juxtaposition", "side by side comparison"], ["paradox", "a contradiction"], ["philanthropic", "charitable intentions"], ["impervious", "no entry"], ["emphatic", "forceful"], ["prehistoric", "time of the dinosaurs"]]
 
-console.log(hardGame[0][0].split(''))
+console.log(hardGame[0][0].split(''));
+
+function countdownTimer() {
+
+    $("#timer").removeClass("yellow-timer");
+    $("#timer").removeClass("yellow-timer");
+    time = sessionStorage.getItem("time");
+
+    counterTime = setInterval(function () {
+        $("#timer").html(time);
+        if (time<16 && time>5) {
+            $("#timer").addClass("yellow-timer");
+        }
+        if (time<=5) {
+            $("#timer").addClass("red-timer");
+        }
+    }, 300);
+}
