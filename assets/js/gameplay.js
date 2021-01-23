@@ -9,19 +9,25 @@ console.log(hardGame[0][0].split(''));
 function countdownTimer() {
 
     $("#timer").removeClass("yellow-timer");
-    $("#timer").removeClass("yellow-timer");
-    time = sessionStorage.getItem("time");
+    $("#timer").removeClass("red-timer");
+    time = 30;
 
     counterTime = setInterval(function () {
         $("#timer").html(time);
+        time--;
         if (time<16 && time>5) {
             $("#timer").addClass("yellow-timer");
         }
         if (time<=5) {
             $("#timer").addClass("red-timer");
         }
+        if (time<0) {
+            resetTimer();
+        }
     }, 300);
 }
+
+countdownTimer();
 
 function resetTimer() {
     clearInterval(counterTime);
