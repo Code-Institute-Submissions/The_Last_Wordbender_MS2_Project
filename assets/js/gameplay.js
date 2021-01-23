@@ -22,3 +22,12 @@ function countdownTimer() {
         }
     }, 300);
 }
+
+function resetTimer() {
+    clearInterval(counterTime);
+    countdownTimer();
+}
+
+function stopTimer() {
+    clearInterval(counterTime);
+}
