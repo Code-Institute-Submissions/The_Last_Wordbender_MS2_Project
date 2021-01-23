@@ -1,45 +1,116 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
 
-Welcome oludare89,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+This web application is for a series of fun and interactive word games. An immersive experience is created by tying the game in with a narrative around Ayo, a mysterious figure of unknown origin titled as "The Last Wordbender".
 
-## Gitpod Reminders
+## User experience
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### User Stories
 
-`python3 -m http.server`
 
-A blue button should appear to click: *Make Public*,
+### Strategy Plane
 
-Another blue button should appear to click: *Open Browser*.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: *Make Public*,
+### Scope Plane
 
-Another blue button should appear to click: *Open Browser*.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-## Updates Since The Instructional Video
+### Structure Plane
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Skeleton Plane
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Surface Plane
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### Colour scheme
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
+#### Typography
 
-Happy coding!
+
+#### Imagery
+
+
+### Wireframes
+* Home Page Wireframe - 
+* Techniques Page Wireframe - 
+* Timetable Page Wireframe - 
+* Sign Up Page Wireframe - 
+
+## Features
+
+
+## Technologies Used
+* HTML5
+* CSS3
+* Javascript
+
+## Frameworks, Libraries and Programs Used
+1. Bootstrap 4.5.2 - Bootstrap was used to assist with the styling and responsiveness of the website
+2. Git - Git was used for version control by utilising the Gitpod terminal to commit to Git and push to Github.
+3. Github - Github was used to store the project code and to host and display the project in Github Pages.
+4. Balsamiq - Balsamiq was used to create the wireframes to provide a guide for the design.
+
+## Testing
+
+
+## User Stories Testing
+ 
+
+## Interactive Testing
+
+
+## Further Testing
+
+
+## Fixed Bugs/Issues
+
+
+## Known Bugs/Issues
+
+
+## Future Features
+
+
+## Deployment
+### GitHub Pages
+The project was deployed to GitHub pages using the following steps:
+1. Log into GitHub and locate the GitHub Repository.
+2. At the top of the Repository, locate the Settings button on the menu.
+3. Scroll down the Settings page until you locate the GitHub pages section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site [link](https://oludare89.github.io/OctoMuyThai_MS1_Project/) in the GitHub Pages section.
+
+### Forking GitHub Repository
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make amendments without changing the original respository using the following steps:
+1. Log into GitHub and locate the GitHub Repository.
+2. At the top of the Repository just above the Settings button on the menu, select the "Fork" button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+1. Log into GitHub and locate the GitHub Repository.
+2. Click the Code button next to the Gitpod button.
+3. You will get a small dropdown titled Clone with the HTTPS option already selected.
+4. To clone the repository using HTTPS, copy the link.
+5. Open Git Bash.
+6. Change the current working directory to the location where you want the cloned directory to be made.
+7. Type 'git clone', and then paste the link you copied in Step 4.
+8. Press Enter. Your local clone will be created.
+
+## Credits
+
+### Code
+* Bootstrap4 - The Bootstrap library used throughout the project to make site responsive using the Bootstrap Grid System. 
+
+### Media
+
+
+### Written Content
+All written content produced by developer.
+
+### Acknowledgements
+* My Mentor for helpful feedback.
