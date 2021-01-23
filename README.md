@@ -1,5 +1,7 @@
 
 
+<img src="assets/images/last_word_bender_pic.jpg" width="240" height="240">
+
 This web application is for a series of fun and interactive word games. An immersive experience is created by tying the game in with a narrative around Ayo, a mysterious figure of unknown origin titled as "The Last Wordbender".
 
 ## User experience
