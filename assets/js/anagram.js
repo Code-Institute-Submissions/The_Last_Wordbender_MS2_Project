@@ -19,20 +19,20 @@ $(document).ready(function() {
         $(".high-score-modal").removeClass("bg-active-modal");
     });
 
-    //below codes is for setting the game difficulty
+    //This is for setting the game difficulty
     $("#btn-easy").click(function() {
         sessionStorage.setItem("gamemode", "easy");
-        sessionStorage.setItem("pointsPerAnswer","50");
+        sessionStorage.setItem("gamePoints","50");
     });
 
     $("#btn-medium").click(function() {
         sessionStorage.setItem("gamemode", "medium");
-        sessionStorage.setItem("pointsPerAnswer","100");
+        sessionStorage.setItem("gamePoints","100");
     });
 
     $("#btn-easy").click(function() {
         sessionStorage.setItem("gamemode", "hard");
-        sessionStorage.setItem("pointsPerAnswer","200");
+        sessionStorage.setItem("gamePoints","200");
     });
 
 });

@@ -46,8 +46,11 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: +1;
-    opacity: 0.5;
+    z-index: -1;
+    opacity: 0.1;
+    min-height: 80vh;
+    width: 70%;
+    border-radius: 20px;
 }
 
 .landing-page-h1 {
