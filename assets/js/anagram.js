@@ -1,5 +1,7 @@
 // default setting of sound being off
 sessionStorage.setItem("sound", "off")
+sessionStorage.setItem("gamemode", "easy");
+sessionStorage.setItem("gamePoints","50");
 
 $(document).ready(function() {
 
