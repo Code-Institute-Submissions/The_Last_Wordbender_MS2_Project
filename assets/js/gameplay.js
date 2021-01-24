@@ -1,13 +1,10 @@
-const easyGame = [["calm", "peace"], ["lantern", "guiding light"], ["blemish", "imperfection"], ["divine", "holy"], ["emotion", "feelings"], ["rotation", "circular"], ["karma", "what comes around goes around"], ["revenge", "payback"], ["shipwreck", "the Titanic"], ["poetry", "... in motion"]]
 
-const mediumGame = [["rejoice", "celebrate"], ["elevate", "higher"], ["invulnerable", "can't be hurt"], ["liberty", "freedom"], ["scarce", "hard to find"], ["zealot", "a true fanatic"], ["heretic", "a blasphemous person"], ["subordinate", "member of the rank and file"], ["citadel", "fortress"], ["paramount", "important"]]
-
-const hardGame = [["tyrannical", "oppressive"], ["meticulous", "in great detail"], ["miniscule", "tiny"], ["flagrant", "brazen wrongdoing"], ["juxtaposition", "side by side comparison"], ["paradox", "a contradiction"], ["philanthropic", "charitable intentions"], ["impervious", "no entry"], ["emphatic", "forceful"], ["prehistoric", "time of the dinosaurs"]]
+let shuffledAnagrams, currentAnagramIndex
 
 console.log(hardGame[0][0].split(''));
 
 function startGame() {
-
+    
 }
 
 function nextAnagram() {
@@ -53,3 +50,39 @@ function stopTimer() {
 function finalScore() {
     $("#endgame-score").html(`You fnished the game with ${localStorage.getItem("points")} points`)
 }
+
+const easyGame = [
+    {answer: "calm", clue: "peace"},
+    {answer: "lantern", clue: "guiding light"},
+    {answer: "blemish", clue: "imperfection"},
+    {answer: "divine", clue: "holy"},
+    {answer: "emotion", clue: "feelings"},
+    {answer: "rotation", clue: "circular"},
+    {answer: "karma", clue: "what comes around goes around"},
+    {answer: "revenge", clue: "payback"},
+    {answer: "shipwreck", clue: "the Titanic"},
+    {answer: "poetry", clue: "... in motion"}]
+
+const mediumGame = [
+    {answer: "rejoice", clue: "celebrate"},
+    {answer: "elevate", clue: "higher"},
+    {answer: "invulnerable", clue: "can't be hurt"},
+    {answer: "liberty", clue: "freedom"},
+    {answer: "scarce", clue: "hard to find"},
+    {answer: "zealot", clue: "a true fanatic"},
+    {answer: "heretic", clue: "a blasphemous person"},
+    {answer: "subordinate", clue: "member of the rank and file"},
+    {answer: "citadel", clue: "fortress"},
+    {answer: "paramount", clue: "important"}]
+
+const hardGame = [
+    {answer: "tyrannical", clue: "oppressive"},
+    {answer: "meticulous", clue: "in great detail"},
+    {answer: "miniscule", clue: "tiny"},
+    {answer: "flagrant", clue: "brazen wrongdoing"},
+    {answer: "juxtapostion", clue: "side by side comparison"},
+    {answer: "paradox", clue: "a contradiction"},
+    {answer: "philanthropic", clue: "charitable intentions"},
+    {answer: "impervious", clue: "no entry"},
+    {answer: "emphatic", clue: "forceful"},
+    {answer: "prehistoric", clue: "time of the dinosaurs"}]
