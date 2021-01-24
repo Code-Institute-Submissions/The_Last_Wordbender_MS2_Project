@@ -10,15 +10,16 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/anagram.js"></script>
+<script defer type="text/javascript" src="assets/js/anagram.js"></script>
+<script defer type="text/javascript" src="assets/js/gameplay.js"></script>
 
 <title>Anagram Atlantis</title>
 </head>
 <body >
     <main class="anagram-background">
-        <section class="glass">
+        <section class="glass anagram-nav">
             <div >
-                <div class="row no-gutters anagram-page">
+                <div class="row no-gutters">
                     <div class="col">
                         <h1 class="landing-page-h1">Anagram Atlantis</h1>
                     </div>
@@ -56,9 +57,7 @@
                     </div>
                 </div>    
             </div>
-            
-        </section>
-        <div class="container-fluid base-modal htp-modal">
+            <div class="container-fluid base-modal htp-modal">
                 <h3 class="modal-h3">How To Play</h3>
                 <p>The first destination of Ayo's(the Last Word Bender) enternal search takes him to the depth of Yemoja's marvellous Atlantis kingdom.</p>
                 <p>Here you must solve the anagram puzzles to continue on your journey</p>
@@ -123,7 +122,34 @@
                     </div>
                     <div class="col-12"><button class="close-btn btn btn-secondary">Close</button></div>
                 </div>
-            </div>    
+            </div>
+        </section>
+        <section class="glass gameplay-screen">
+            <div class="row">
+                <div class="col-4">
+                    <button class="home-btn"><a href="anagram_homepage.html">Home</a></button>
+                    <button class="restart-btn">Restart Game</button>
+                </div>
+            </div>
+            <div id="timer" class="green-timer"></div>
+            <div class="game-section">
+                <div id="anagram"></div>
+                <div id="clue"></div>
+                <input type="text"><br>
+                <button type="submit" id="answer-btn" class="btn btn-secondary">Enter</button>
+            </div>
+            <div class="base-modal next-modal">
+                <h3 class="right-or-wrong"></h3><br>
+                <button class="next-btn">Next</button>    
+            </div>
+            <div class="base-modal game-over-modal">
+                <h3 class="game-over-h3">End of Game</h3><br>
+                <p id="endgame-score"></p>
+                <button class="home-btn"><a href="anagram_homepage.html">Home</a></button>
+                <button class="restart-btn">Restart Game</button>     
+            </div>
+        </section>
+            
     </main>   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>

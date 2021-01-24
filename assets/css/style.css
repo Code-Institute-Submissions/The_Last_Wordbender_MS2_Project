@@ -144,20 +144,12 @@ li {
     background-repeat: no-repeat;
 }
 
-#anagram-page-nav {
-    text-decoration: none;
-    font-size: 22px;
-    text-align: center;
-    list-style-type: none;
+.anagram-nav {
+    position: absolute;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-#anagram-page-nav li a {
-    text-decoration: none;
-    color: inherit;
 }
 
 .back-btn {
@@ -209,6 +201,26 @@ li {
 
 
 /*...................Gameplay page*/
+
+.gameplay-screen {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.reveal {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hide {
+    visibility: hidden;
+    opacity: 0;
+}
 
 .green-timer {
     background-color: #00cc00;

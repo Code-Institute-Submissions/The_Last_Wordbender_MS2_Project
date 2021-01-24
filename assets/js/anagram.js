@@ -1,5 +1,5 @@
 // default setting of sound being off
-sessionStorage.setItem("sound", "off")
+sessionStorage.setItem("sound", "off");
 sessionStorage.setItem("gamemode", "easy");
 sessionStorage.setItem("gamePoints","50");
 
@@ -36,5 +36,19 @@ $(document).ready(function() {
         sessionStorage.setItem("gamemode", "hard");
         sessionStorage.setItem("gamePoints","200");
     });
+
+    // This is to transition to the gameplay screen
+    $('#start-btn').click(function() {
+        $(".anagram-nav").addClass("hide");
+        $(".gameplay-screen").addClass("reveal");
+    });
+
+    // This is to transition back to the Anagram Atlantis navigation screen
+    $('#home-btn').click(function() {
+        $(".anagram-nav").removeClass("hide");
+        $(".gameplay-screen").removeClass("reveal");
+    });
+
+
 
 });
