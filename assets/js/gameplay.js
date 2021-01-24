@@ -21,7 +21,10 @@ function countdownTimer() {
         if (time<=5) {
             $("#timer").addClass("red-timer");
         }
-    }, 300);
+        if (time<=0) {
+            resetTimer();
+        }
+    }, 1000);
 }
 
 countdownTimer();
