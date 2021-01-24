@@ -1,10 +1,22 @@
-var easyGame = [["calm", "peace"], ["lantern", "guiding light"], ["blemish", "imperfection"], ["divine", "holy"], ["emotion", "feelings"], ["rotation", "circular"], ["karma", "what comes around goes around"], ["revenge", "payback"], ["shipwreck", "the Titanic"], ["poetry", "... in motion"]]
+const easyGame = [["calm", "peace"], ["lantern", "guiding light"], ["blemish", "imperfection"], ["divine", "holy"], ["emotion", "feelings"], ["rotation", "circular"], ["karma", "what comes around goes around"], ["revenge", "payback"], ["shipwreck", "the Titanic"], ["poetry", "... in motion"]]
 
-var mediumGame = [["rejoice", "celebrate"], ["elevate", "higher"], ["invulnerable", "can't be hurt"], ["liberty", "freedom"], ["scarce", "hard to find"], ["zealot", "a true fanatic"], ["heretic", "a blasphemous person"], ["subordinate", "member of the rank and file"], ["citadel", "fortress"], ["paramount", "important"]]
+const mediumGame = [["rejoice", "celebrate"], ["elevate", "higher"], ["invulnerable", "can't be hurt"], ["liberty", "freedom"], ["scarce", "hard to find"], ["zealot", "a true fanatic"], ["heretic", "a blasphemous person"], ["subordinate", "member of the rank and file"], ["citadel", "fortress"], ["paramount", "important"]]
 
-var hardGame = [["tyrannical", "oppressive"], ["meticulous", "in great detail"], ["miniscule", "tiny"], ["flagrant", "brazen wrongdoing"], ["juxtaposition", "side by side comparison"], ["paradox", "a contradiction"], ["philanthropic", "charitable intentions"], ["impervious", "no entry"], ["emphatic", "forceful"], ["prehistoric", "time of the dinosaurs"]]
+const hardGame = [["tyrannical", "oppressive"], ["meticulous", "in great detail"], ["miniscule", "tiny"], ["flagrant", "brazen wrongdoing"], ["juxtaposition", "side by side comparison"], ["paradox", "a contradiction"], ["philanthropic", "charitable intentions"], ["impervious", "no entry"], ["emphatic", "forceful"], ["prehistoric", "time of the dinosaurs"]]
 
 console.log(hardGame[0][0].split(''));
+
+function startGame() {
+
+}
+
+function nextAnagram() {
+
+}
+
+function answerSubmitted() {
+
+}
 
 function countdownTimer() {
 
