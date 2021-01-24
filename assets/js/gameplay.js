@@ -1,17 +1,17 @@
 const easyAnagrams = [
-    {anagram: "mlca", answer: "calm", clue: "peace"},
-    {anagram: "tralnner", answer: "lantern", clue: "guiding light"},
-    {anagram: "embhils", answer: "blemish", clue: "imperfection"},
-    {anagram: "viiden", answer: "divine", clue: "holy"},
-    {anagram: "moonite", answer: "emotion", clue: "feelings"},
-    {anagram: "iotroatn", answer: "rotation", clue: "circular"},
-    {anagram: "kaamr", answer: "karma", clue: "what comes around goes around"},
-    {anagram: "gveenre", answer: "revenge", clue: "payback"},
-    {anagram: "rcspikwhe", answer: "shipwreck", clue: "the Titanic"},
-    {anagram: "tropey", answer: "poetry", clue: "... in motion"}]
+    {answer: "calm", clue: "peace"},
+    {answer: "lantern", clue: "guiding light"},
+    {answer: "blemish", clue: "imperfection"},
+    {answer: "divine", clue: "holy"},
+    {answer: "emotion", clue: "feelings"},
+    {answer: "rotation", clue: "circular"},
+    {answer: "karma", clue: "what comes around goes around"},
+    {answer: "revenge", clue: "payback"},
+    {answer: "shipwreck", clue: "the Titanic"},
+    {answer: "poetry", clue: "... in motion"}]
 
 const mediumAnagrams = [
-    {anagram: "ijroece", answer: "rejoice", clue: "celebrate"},
+    {answer: "rejoice", clue: "celebrate"},
     {answer: "elevate", clue: "higher"},
     {answer: "invulnerable", clue: "can't be hurt"},
     {answer: "liberty", clue: "freedom"},
@@ -40,23 +40,18 @@ const clueElement = document.getElementById('clue')
 let shuffledAnagrams, currentAnagramIndex
 
 function startGame() {
-    $('#start-btn').click(function() {
-        $(".anagram-nav").addClass("hide");
-        $(".gameplay-screen").addClass("reveal");
-    });
-    
     if (sessionStorage.getItem("gamemode") === "easy") {
-    shuffledAnagrams = easyAnagrams.sort(() => Math.random() - .5)
-    currentAnagramIndex = 0
-    nextAnagram()
+    shuffledAnagrams = easyAnagrams.sort(() => Math.random() - .5);
+    currentAnagramIndex = 0;
+    nextAnagram();
     } else if (sessionStorage.getItem("gamemode") === "medium") {
-        shuffledAnagrams = mediumAnagrams.sort(() => Math.random() - .5)
-    currentAnagramIndex = 0
-    nextAnagram()
+        shuffledAnagrams = mediumAnagrams.sort(() => Math.random() - .5);
+    currentAnagramIndex = 0;
+    nextAnagram();
     } else {
-        shuffledAnagrams = hardAnagrams.sort(() => Math.random() - .5)
-    currentAnagramIndex = 0
-    nextAnagram()
+        shuffledAnagrams = hardAnagrams.sort(() => Math.random() - .5);
+    currentAnagramIndex = 0;
+    nextAnagram();
 }
 
 function nextAnagram() {
@@ -64,8 +59,19 @@ function nextAnagram() {
 }
 
 function showAnagram(anagram, clue) {
-    anagramElement.innerText = easyAnagrams.anagram
+    if (sessionStorage.getItem("gamemode") === "easy") {
+        anagramElement.innerText = easyAnagrams.anagram
     clueElement.innerText = easyAnagrams.clue
+    }
+    else if (sessionStorage.getItem("gamemode") === "medium") {
+        anagramElement.innerText = mediumAnagrams.anagram
+    clueElement.innerText = mediumAnagrams.clue
+    }
+    else {
+        anagramElement.innerText = hardAnagrams.anagram
+    clueElement.innerText = hardAnagrams.clue
+    }
+    
 }
 
 showAnagram();
@@ -73,6 +79,20 @@ showAnagram();
 function answerSubmitted() {
 
 }
+
+function createAnagram() {
+    function getAnswers(array, field) {
+        var output = [];
+        for (i=0; i < array.length; ++i)
+        output.push(array[i][field]);
+        return output;
+    }
+var answer = getAnswers(easyAnagrams, "answer");
+for (i=0; i < answer.length; ++i)
+answer[i].split('')
+}
+
+createAnagram();
 
 function countdownTimer() {
 
@@ -95,8 +115,6 @@ function countdownTimer() {
     }, 1000);
 }
 
-countdownTimer();
-
 function resetTimer() {
     clearInterval(counterTime);
     countdownTimer();
@@ -108,4 +126,25 @@ function stopTimer() {
 
 function finalScore() {
     $("#endgame-score").html(`You fnished the game with ${localStorage.getItem("points")} points`)
+}}
+
+
+function practiceShuffle(s) {
+    var example = s.split('');
+
+    example.sort(function() {
+        return 0.5 - Math.random();
+    });
+    s = example.join('');
+    return s;
 }
+
+var s = 'paramount';
+
+s = practiceShuffle(s);
+
+console.log(s);
+
+console.log(easyAnagrams.keys("answer"))
+
+console.log(sessionStorage.getItem("gamemode"))
