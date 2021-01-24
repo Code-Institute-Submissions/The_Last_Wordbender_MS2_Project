@@ -1,7 +1,7 @@
 
 let shuffledAnagrams, currentAnagramIndex
 
-console.log(hardGame[0][0].split(''));
+
 
 function startGame() {
     
@@ -86,3 +86,5 @@ const hardGame = [
     {answer: "impervious", clue: "no entry"},
     {answer: "emphatic", clue: "forceful"},
     {answer: "prehistoric", clue: "time of the dinosaurs"}]
+
+console.log(hardGame[0][0].split(''));
