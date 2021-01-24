@@ -37,3 +37,7 @@ function resetTimer() {
 function stopTimer() {
     clearInterval(counterTime);
 }
+
+function finalScore() {
+    $("#endgame-score").html(`You fnished the game with ${localStorage.getItem("points")} points`)
+}
