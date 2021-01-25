@@ -203,10 +203,6 @@ li {
 /*...................Gameplay page*/
 
 .gameplay-screen {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
