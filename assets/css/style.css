@@ -75,6 +75,11 @@ li {
     font-size: 120%;
 }
 
+.inactive .landing-btn:hover{
+    font-size: 120%;
+    background-color: #666666;
+}
+
 .base-modal {
     position: fixed;
     width: 100%;
