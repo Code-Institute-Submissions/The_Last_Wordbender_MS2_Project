@@ -41,7 +41,7 @@ let shuffledAnagrams, currentAnagramIndex
 
 function startGame() {
     
-    // on easy mode I want to shuffle through the easyAnagrams object
+    // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams.sort(() => Math.random() - .5);
     currentAnagramIndex = 0;
@@ -86,25 +86,10 @@ function showAnagram(anagram, clue) {
     
 }
 
-showAnagram();
 
 function answerSubmitted() {
 
 }
-
-function createAnagram() {
-    function getAnswers(array, field) {
-        var output = [];
-        for (i=0; i < array.length; ++i)
-        output.push(array[i][field]);
-        return output;
-    }
-var answer = getAnswers(easyAnagrams, "answer");
-for (i=0; i < answer.length; ++i)
-answer[i].split('')
-}
-
-createAnagram();
 
 function countdownTimer() {
 
@@ -141,22 +126,20 @@ function finalScore() {
 }}
 
 
-function practiceShuffle(s) {
-    var example = s.split('');
+function createAnagram(answer) {
+    var newAnagram = answer.split('');
 
-    example.sort(function() {
+    newAnagram.sort(function() {
         return 0.5 - Math.random();
     });
-    s = example.join('');
-    return s;
+    answer = newAnagram.join('');
+    return answer;
 }
 
-var s = 'paramount';
+answer = easyAnagrams.answer
 
-s = practiceShuffle(s);
+answer = createAnagram();
 
-console.log(s);
+console.log();
 
-console.log(easyAnagrams.keys("answer"))
 
-console.log(sessionStorage.getItem("gamemode"))
