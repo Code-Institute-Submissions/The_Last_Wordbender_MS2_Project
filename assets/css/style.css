@@ -204,6 +204,13 @@ li {
     border-radius: 15px;
     background-color: #8c1aff;
     padding: 5px 5px 5px 5px;
+    color: #fff;
+}
+
+.main-menu-btn:hover {
+    color: #8c1aff;
+    background-color: #fff;
+    font-size: 120%;
 }
 
 .back-btn {
