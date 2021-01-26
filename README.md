@@ -1,4 +1,4 @@
-
+The Last Wordbender / Anagram Atlantis
 
 <img src="assets/images/last_word_bender_pic.jpg" width="240" height="240">
 
@@ -7,11 +7,17 @@ This web application is for a series of fun and interactive word games. An immer
 ## User experience
 
 ### User Stories
-
+* As a site owner, I want the game to be visually appealing to attract visitors to the site to play the game.
+* As a site owner, I want the game to be sufficiently challenging to provide a challenge to the site users and a rewarding experience.
+* As a site owner, I want the game to be educational and mentally stimulating to provide a valuable experience to the site users.
+* As a site user, I want the game to be interactive and provide an enjoyable experience.
+* As a site user, I want the game to challenging and provide a rewarding experience.
+* As a site user, I want to be able to achieve a score so that I can compare my score to others.
 
 ### Strategy Plane
+The goal of the web application is to provide a series of challenging word games to the user to provide a challenging and rewarding experience to the site users. The first word game to be released is an anagram game which will challenge the user to provide the correct word from a scrambled version of the word provided by the game.
 
-
+The goal for the visitors of the web application is to enjoy the word games provided and to strive to achieve the highest score possible.
 
 ### Scope Plane
 
