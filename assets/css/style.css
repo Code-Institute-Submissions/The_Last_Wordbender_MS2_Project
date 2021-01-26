@@ -86,7 +86,6 @@ li {
     justify-content: center;
     align-items: center;
     visibility: hidden;
-    pointer-events: none;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
 }
@@ -100,6 +99,7 @@ li {
     padding: 30px 50px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     text-align: center;
+    font-weight: bold
 }
 
 .close-btn {
@@ -201,12 +201,43 @@ li {
     background-color: #ffff80;
 }
 
+.base-modal-htp {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.base-modal-hs {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
 .main-menu-btn {
     margin-top: 10px;
     border-radius: 15px;
     background-color: #8c1aff;
     padding: 5px 5px 5px 5px;
     color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .main-menu-btn:hover {
@@ -218,9 +249,16 @@ li {
 .back-btn {
     color: #fff;
     border-radius: 15px;
-    background-color: #ffaa00;
+    background-color: #8c1aff;
     padding: 5px 5px 5px 5px;
     margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.back-btn:hover {
+    color: #8c1aff;
+    background-color: #fff;
+    font-size: 120%;
 }
 
 .back-btn a {
