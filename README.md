@@ -20,24 +20,31 @@ The goal of the web application is to provide a series of challenging word games
 The goal for the visitors of the web application is to enjoy the word games provided and to strive to achieve the highest score possible.
 
 ### Scope Plane
+The landing page will provide navigation to the word games.
 
-
+The first word game to be released and developed is Anagram Atlantis. Site users will be able to play an interactive anagram word game and test themselves at different difficulty levels.
 
 ### Structure Plane
+The landing page will present the various word games and be the first page the site users interact with.
 
+Once the Anagram Atlantis game is selected, it will take you to a home screen for the anagram game. Site users will be able to select sound on and off, select difficulty level, find out how to play the game and launch the start of the game when they are ready.
 
+The game will provide different level of difficulty depending on whether easy, medium or hard is selected. 
 
 ### Skeleton Plane
+In the gameplay, there will be a 30 second timer will be provided for each anagram and users will have to enter the right answer into the input field and submit their answer. If the answer is correct then this will add to their score and there will also be additional points awarded depending on how quickly the question is answered.
 
-
+The Anagram Atlantis home page will have modals that will appear on interaction showing the users high scores and explaining how to play the game.
 
 ### Surface Plane
 
 #### Colour scheme
+The colour scheme of the landing page is grey, black and orange which provide a contrast.
 
+The colour scheme of the Anagram Atlantis game is blue, purple and white which are complementary.
 
 #### Typography
-
+The font used is Fondamento from Google Fonts.
 
 #### Imagery
 
@@ -81,6 +88,7 @@ The goal for the visitors of the web application is to enjoy the word games prov
 
 
 ## Future Features
+The main future features is to release the other three word games: Crossword Cornucopia, Hangman Heights and Riddle Rapture.
 
 
 ## Deployment
