@@ -88,7 +88,7 @@ The font used is Fondamento from Google Fonts.
 
 
 ## Future Features
-The main future features is to release the other three word games: Crossword Cornucopia, Hangman Heights and Riddle Rapture.
+The main future features is to develop and release the other three word games: Crossword Cornucopia, Hangman Heights and Riddle Rapture.
 
 
 ## Deployment
