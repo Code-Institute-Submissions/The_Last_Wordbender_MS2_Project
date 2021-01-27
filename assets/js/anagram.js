@@ -52,6 +52,13 @@ $(document).ready(function() {
         resetTimer();
     });
 
+    // This to restart the game
+   $('.restart-btn').click(function() {
+        resetTimer();
+        startGame();
+        countdownTimer();
+    }); 
+
 
 
 });
