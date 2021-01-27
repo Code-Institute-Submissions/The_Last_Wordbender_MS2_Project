@@ -174,7 +174,7 @@ li {
 }
 
 .htp-modal {
-    background-color: #fff;
+    background-color: #99ff99;
     position: absolute;
     width: 45%;
     height: 45%;
@@ -184,11 +184,12 @@ li {
     flex-direction: column;
     font-size: 12px;
     border-radius: 20px;
-    background-color: #ffff80;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .high-score-modal {
-    background-color: #fff;
+    background-color: #99ff99;
     position: absolute;
     width: 45%;
     height: 45%;
@@ -198,7 +199,8 @@ li {
     flex-direction: column;
     font-size: 12px;
     border-radius: 20px;
-    background-color: #ffff80;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .base-modal-htp {
@@ -308,4 +310,47 @@ li {
     align-items: center;
     font-weight: bold;
     font-size: 30px;
+}
+
+.home-btn {
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #8c1aff;
+    padding: 5px 5px 5px 5px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.restart-btn {
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #8c1aff;
+    padding: 5px 5px 5px 5px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.home-btn:hover {
+    color: #8c1aff;
+    background-color: #fff;
+}
+
+.restart-btn:hover {
+    color: #8c1aff;
+    background-color: #fff;
+}
+
+#answer-btn {
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: #8c1aff;
+    padding: 10px 10px 10px 10px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#answer-btn:hover {
+    color: #8c1aff;
+    background-color: #fff;
+    font-size: 120%;
 }
