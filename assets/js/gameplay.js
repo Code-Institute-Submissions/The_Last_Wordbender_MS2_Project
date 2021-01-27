@@ -44,6 +44,7 @@ function startGame() {
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
+    showAnagram()
     nextAnagram();
 
     // on medium mode I want to shuffle through the mediumAnagrams object
@@ -81,6 +82,27 @@ function showAnagram(anagram, clue) {
     clueElement.innerText = hardAnagrams.clue
     }
     
+}
+
+function createAnagram(answer) {
+
+    function getRandomInt(n) {
+        return Math.floor(Math.random() * n);
+    }
+
+    var newAnagram = answer.split('');
+
+    var n = newAnagram.length;
+
+    for(var i = 0; i < n-1; ++i) {
+        var j = getRandomInt(n);
+
+        var temp = newAnagram[i];
+        newAnagram[i] = newAnagram[j];
+        newAnagram[j] = temp;
+    }
+    s = newAnagram.join('');
+    return s;
 }
 
 
@@ -123,20 +145,8 @@ function finalScore() {
 }}
 
 
-function createAnagram(answer) {
-    var newAnagram = answer.split('');
 
-    newAnagram.sort(function() {
-        return 0.5 - Math.random();
-    });
-    answer = newAnagram.join('');
-    return answer;
-}
 
-answer = easyAnagrams.answer
 
-answer = createAnagram();
-
-console.log();
 
 
