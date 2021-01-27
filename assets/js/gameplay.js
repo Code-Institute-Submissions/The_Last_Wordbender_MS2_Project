@@ -43,21 +43,18 @@ function startGame() {
     
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
-    shuffledAnagrams = easyAnagrams.sort(() => Math.random() - .5);
-    currentAnagramIndex = 0;
+    shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
     nextAnagram();
 
     // on medium mode I want to shuffle through the mediumAnagrams object
     } else if (sessionStorage.getItem("gamemode") === "medium") {
-        shuffledAnagrams = mediumAnagrams.sort(() => Math.random() - .5);
-    currentAnagramIndex = 0;
-    nextAnagram();
+        shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
+        nextAnagram();
 
     // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
     } else {
-        shuffledAnagrams = hardAnagrams.sort(() => Math.random() - .5);
-    currentAnagramIndex = 0;
-    nextAnagram();
+        shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
+        nextAnagram();
 }
 
 function nextAnagram() {
