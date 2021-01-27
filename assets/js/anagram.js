@@ -7,18 +7,18 @@ $(document).ready(function() {
 
     // this is to activate the how to play modal being shown
     $("#how-to-play").click(function() {
-        $(".base-modal-htp").addClass("reveal");
+        $(".htp-modal").addClass("reveal");
     });
 
     // this is to activate the high scores modal being shown
     $("#high-scores").click(function() {
-        $(".base-modal-hs").addClass("reveal");
+        $(".hs-modal").addClass("reveal");
     });
 
     // this is to close any modals in the html file
     $(".close-btn").click(function() {
-        $(".base-modal-hs").removeClass("reveal");
-        $(".base-modal-htp").removeClass("reveal");
+        $(".hs-modal").removeClass("reveal");
+        $(".htp-modal").removeClass("reveal");
     });
 
     //This is for setting the game difficulty
