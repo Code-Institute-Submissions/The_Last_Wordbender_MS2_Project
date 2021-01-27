@@ -37,17 +37,19 @@ $(document).ready(function() {
         sessionStorage.setItem("gamePoints","200");
     });
 
-    // This is to transition to the gameplay screen
+    // This is to transition to the gameplay screen and start the game
     $('#start-btn').click(function() {
         $(".anagram-nav").addClass("hide");
         $(".gameplay-screen").addClass("reveal");
         startGame();
+        countdownTimer();
     });
 
-    // This is to transition back to the Anagram Atlantis navigation screen
+    // This is to transition back to the Anagram Atlantis navigation screen and reset the timer
     $('.home-btn').click(function() {
         $(".anagram-nav").removeClass("hide");
         $(".gameplay-screen").removeClass("reveal");
+        resetTimer();
     });
 
 
