@@ -313,7 +313,7 @@ li {
 }
 
 .home-btn {
-    margin-top: 10px;
+    margin: 20px 50px;
     border-radius: 15px;
     background-color: #8c1aff;
     padding: 5px 5px 5px 5px;
@@ -322,7 +322,7 @@ li {
 }
 
 .restart-btn {
-    margin-top: 10px;
+    margin: 20px 50px;
     border-radius: 15px;
     background-color: #8c1aff;
     padding: 5px 5px 5px 5px;
@@ -353,4 +353,10 @@ li {
     color: #8c1aff;
     background-color: #fff;
     font-size: 120%;
+}
+
+input[type=text] {
+    border-radius: 5px;
+    margin: 20px 10px 20px 10px;
+    padding: 10px 20px;
 }
