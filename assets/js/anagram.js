@@ -45,7 +45,7 @@ $(document).ready(function() {
     });
 
     // This is to transition back to the Anagram Atlantis navigation screen
-    $('#home-btn').click(function() {
+    $('.home-btn').click(function() {
         $(".anagram-nav").removeClass("hide");
         $(".gameplay-screen").removeClass("reveal");
     });
