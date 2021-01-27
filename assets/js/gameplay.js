@@ -44,18 +44,19 @@ function startGame() {
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
-    showAnagram()
-    nextAnagram();
+    const anagram = createAnagram(shuffledAnagrams.answer)
+    showAnagram(anagram, shuffledAnagrams.clue);
+    
 
     // on medium mode I want to shuffle through the mediumAnagrams object
     } else if (sessionStorage.getItem("gamemode") === "medium") {
         shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
-        nextAnagram();
+        showAnagram();
 
     // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
     } else {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
-        nextAnagram();
+        showAnagram();
 }
 
 function nextAnagram() {
@@ -64,23 +65,8 @@ function nextAnagram() {
 
 function showAnagram(anagram, clue) {
 
-    // want to show the current anagram and clue from the easyAnagram object when on easy mode
-    if (sessionStorage.getItem("gamemode") === "easy") {
-        anagramElement.innerText = easyAnagrams.anagram
-    clueElement.innerText = easyAnagrams.clue
-    }
-
-    // want to show the current anagram and clue from the mediumAnagram object when on medium mode
-    else if (sessionStorage.getItem("gamemode") === "medium") {
-        anagramElement.innerText = mediumAnagrams.anagram
-    clueElement.innerText = mediumAnagrams.clue
-    }
-
-    // want to show the current anagram and clue from the hardAnagram object when on hard mode
-    else {
-        anagramElement.innerText = hardAnagrams.anagram
-    clueElement.innerText = hardAnagrams.clue
-    }
+    anagramElement.innerText = anagram
+    clueElement.innerText = clue
     
 }
 
