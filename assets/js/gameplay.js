@@ -39,6 +39,7 @@ const anagramElement = document.getElementById('anagram')
 const clueElement = document.getElementById('clue')
 let shuffledAnagrams, currentAnagramIndex
 
+
 function startGame() {
     
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
@@ -62,8 +63,26 @@ function startGame() {
 }
 
 function nextAnagram() {
-    showAnagram(shuffledAnagrams[currentAnagramIndex])
-}
+    
+    // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
+    if (sessionStorage.getItem("gamemode") === "easy") {
+    shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
+    const anagram = createAnagram(shuffledAnagrams.answer)
+    showAnagram(anagram, shuffledAnagrams.clue);
+    
+
+    // on medium mode I want to shuffle through the mediumAnagrams object
+    } else if (sessionStorage.getItem("gamemode") === "medium") {
+        shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
+        const anagram = createAnagram(shuffledAnagrams.answer)
+        showAnagram(anagram, shuffledAnagrams.clue);
+
+    // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
+    } else {
+        shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
+        const anagram = createAnagram(shuffledAnagrams.answer)
+        showAnagram(anagram, shuffledAnagrams.clue);
+}}
 
 function showAnagram(anagram, clue) {
 
@@ -113,8 +132,10 @@ function countdownTimer() {
         if (time<=5) {
             $("#timer").addClass("red-timer");
         }
-        if (time<=0) {
-            resetTimer();
+        if (time=-1) {
+            $(".next-modal").addClass("reveal");
+            stopTimer();
+
         }
     }, 1000);
 }
