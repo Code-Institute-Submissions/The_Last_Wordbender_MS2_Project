@@ -176,35 +176,35 @@ li {
 .htp-modal {
     background-color: #99ff99;
     position: absolute;
-    width: 45%;
-    height: 45%;
+    width: 50%;
+    height: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     font-size: 12px;
     border-radius: 20px;
     color: #000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-     visibility: hidden;
+    visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
 }
 
-.high-score-modal {
+.hs-modal {
     background-color: #99ff99;
     position: absolute;
-    width: 45%;
-    height: 45%;
+    width: 50%;
+    height: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     font-size: 12px;
     border-radius: 20px;
     color: #000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-     visibility: hidden;
+    visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
 }
@@ -335,4 +335,22 @@ input[type=text] {
     border-radius: 5px;
     margin: 20px 10px 20px 10px;
     padding: 10px 20px;
+}
+
+.next-modal {
+    background-color: #99ff99;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    border-radius: 20px;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
 }

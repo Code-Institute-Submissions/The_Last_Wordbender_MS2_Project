@@ -94,8 +94,8 @@ function createAnagram(answer) {
 }
 
 
-function answerSubmitted() {
-
+function answerAnagram() {
+    
 }
 
 function countdownTimer() {
@@ -129,7 +129,7 @@ function stopTimer() {
 }
 
 function finalScore() {
-    $("#endgame-score").html(`You fnished the game with ${localStorage.getItem("points")} points`)
+    $("#endgame-score").html(`You fnished the game with ${localStorage.getItem("gamePoints")} points`)
 }}
 
 
