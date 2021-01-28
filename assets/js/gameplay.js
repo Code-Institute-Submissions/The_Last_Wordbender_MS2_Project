@@ -51,12 +51,14 @@ function startGame() {
     // on medium mode I want to shuffle through the mediumAnagrams object
     } else if (sessionStorage.getItem("gamemode") === "medium") {
         shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
-        showAnagram();
+        const anagram = createAnagram(shuffledAnagrams.answer)
+        showAnagram(anagram, shuffledAnagrams.clue);
 
     // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
     } else {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
-        showAnagram();
+        const anagram = createAnagram(shuffledAnagrams.answer)
+        showAnagram(anagram, shuffledAnagrams.clue);
 }
 
 function nextAnagram() {
