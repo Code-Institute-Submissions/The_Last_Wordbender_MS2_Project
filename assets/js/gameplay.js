@@ -41,6 +41,9 @@ let shuffledAnagrams, currentAnagramIndex
 
 
 function startGame() {
+
+    resetTimer();
+    countdownTimer();
     
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
@@ -60,6 +63,8 @@ function startGame() {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
         const anagram = createAnagram(shuffledAnagrams.answer)
         showAnagram(anagram, shuffledAnagrams.clue);
+
+    
 }
 
 function nextAnagram() {
@@ -112,12 +117,7 @@ function createAnagram(answer) {
     return s;
 }
 
-
-function answerAnagram() {
-    
-}
-
-function countdownTimer() {
+function countdownTimer(time) {
 
     $("#timer").removeClass("yellow-timer");
     $("#timer").removeClass("red-timer");
@@ -125,14 +125,14 @@ function countdownTimer() {
 
     counterTime = setInterval(function () {
         $("#timer").html(time);
-        time--;
+        time -=1;
         if (time<16 && time>5) {
             $("#timer").addClass("yellow-timer");
         }
         if (time<=5) {
             $("#timer").addClass("red-timer");
         }
-        if (time=-1) {
+        if (time=0) {
             $(".next-modal").addClass("reveal");
             stopTimer();
 
@@ -148,6 +148,13 @@ function resetTimer() {
 function stopTimer() {
     clearInterval(counterTime);
 }
+
+
+function answerAnagram() {
+    
+}
+
+
 
 function finalScore() {
     $("#endgame-score").html(`You fnished the game with ${localStorage.getItem("gamePoints")} points`)

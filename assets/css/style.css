@@ -175,7 +175,7 @@ li {
 
 .htp-modal {
     background-color: #99ff99;
-    position: absolute;
+    position: fixed;
     width: 50%;
     height: 50%;
     display: flex;

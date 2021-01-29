@@ -42,22 +42,21 @@ $(document).ready(function() {
         $(".anagram-nav").addClass("hide");
         $(".gameplay-screen").addClass("reveal");
         startGame();
-        countdownTimer();
     });
 
     // This is to transition back to the Anagram Atlantis navigation screen and reset the timer
     $('.home-btn').click(function() {
         $(".anagram-nav").removeClass("hide");
         $(".gameplay-screen").removeClass("reveal");
-        stopTimer();
     });
 
     // This to restart the game
    $('.restart-btn').click(function() {
-        resetTimer();
         startGame();
-        countdownTimer();
     }); 
 
     
 });
+
+
+
