@@ -41,9 +41,6 @@ let shuffledAnagrams, currentAnagramIndex
 
 
 function startGame() {
-
-    resetTimer();
-    countdownTimer();
     
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
@@ -117,7 +114,7 @@ function createAnagram(answer) {
     return s;
 }
 
-function countdownTimer(time) {
+function countdownTimer() {
 
     $("#timer").removeClass("yellow-timer");
     $("#timer").removeClass("red-timer");

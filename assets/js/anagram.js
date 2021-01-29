@@ -42,6 +42,7 @@ $(document).ready(function() {
         $(".anagram-nav").addClass("hide");
         $(".gameplay-screen").addClass("reveal");
         startGame();
+        countdownTimer();
     });
 
     // This is to transition back to the Anagram Atlantis navigation screen and reset the timer
@@ -53,6 +54,8 @@ $(document).ready(function() {
     // This to restart the game
    $('.restart-btn').click(function() {
         startGame();
+        resetTimer();
+        countdownTimer();
     }); 
 
     
