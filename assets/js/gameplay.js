@@ -40,6 +40,8 @@ const clueElement = document.getElementById('clue')
 const timeLeftDisplay = document.querySelector('#timer')
 let shuffledAnagrams, currentAnagramIndex
 var anagramCount = 0
+var score = 0
+var anagramAnswer = document.getElementById('answer')
 
 $(document).ready(function() {
 
@@ -67,6 +69,7 @@ $(document).ready(function() {
 
 function startGame() {
     
+    anagramCount +=1;
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
@@ -85,12 +88,13 @@ function startGame() {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
         const anagram = createAnagram(shuffledAnagrams.answer)
         showAnagram(anagram, shuffledAnagrams.clue);
-
-    
 }
 
 function nextAnagram() {
-    
+
+    anagramCount +=1;
+    resetTimer();
+
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
@@ -119,6 +123,7 @@ function showAnagram(anagram, clue) {
     clueElement.innerText = clue
     
 }
+
 
 function createAnagram(answer) {
 
@@ -173,6 +178,21 @@ function stopTimer() {
 
 
 function answerAnagram() {
+    stopTimer();
+
+    function answerSubmit(event) {
+    event.preventDefault();
+    }
+
+    const answerAnagram = document.getElementById('answer');
+    form.addEventListener('submit', answerAnagram);
+
+    if (anagramAnswer === answer) {
+        score = score + sessionStorage.getItem("gamePoints")
+    }
+    else {
+        score = score
+    }
     
 }
 
