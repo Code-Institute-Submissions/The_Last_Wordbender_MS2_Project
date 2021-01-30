@@ -67,6 +67,8 @@ $(document).ready(function() {
     }); 
 });
 
+// required functions is a way to keep shuffling through the anagrams and then to stop after 10 and trigger the game-over-modal which will display the final score
+
 function startGame() {
     
     anagramCount +=1;
@@ -92,6 +94,7 @@ function startGame() {
 
 function nextAnagram() {
 
+    //the purpose of this function is to show the next Anagram
     anagramCount +=1;
     resetTimer();
 
@@ -119,6 +122,7 @@ function nextAnagram() {
 
 function showAnagram(anagram, clue) {
 
+    // this function is to show the anagram in the related div
     anagramElement.innerText = anagram
     clueElement.innerText = clue
     
@@ -127,6 +131,7 @@ function showAnagram(anagram, clue) {
 
 function createAnagram(answer) {
 
+    // this function is to create an anagram out of the object
     function getRandomInt(n) {
         return Math.floor(Math.random() * n);
     }
@@ -147,6 +152,8 @@ function createAnagram(answer) {
 }
 
 function countdownTimer() {
+
+    // this function is to start a countdown timer and display the time left in the related div
     var countdownTimer = setInterval(function() {
         let timer = document.getElementById("timer")
         timeLeft -= 1
@@ -178,6 +185,8 @@ function stopTimer() {
 
 
 function answerAnagram() {
+
+    //need a function where people can submit the answer in the game and then the timers stop, if the answer is correct then they gain points based on difficulty level
     stopTimer();
 
     function answerSubmit(event) {
@@ -199,6 +208,8 @@ function answerAnagram() {
 
 
 function finalScore() {
+
+    // this function to display the final score and then may add how many anagrams out of ten were correct
     $("#endgame-score").html(`You fnished the game with ${localStorage.getItem("gamePoints")} points`)
 }}
 
