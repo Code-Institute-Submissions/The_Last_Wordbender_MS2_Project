@@ -3,6 +3,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -10,10 +11,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-.no-padding {
-    padding: 0;
 }
 
 .uppercase {
@@ -39,6 +36,14 @@ main {
     background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.3));
     border-radius: 20px;
     backdrop-filter: blur(5px);
+}
+
+.landing-page {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .landing-page-h1 {
@@ -147,7 +152,7 @@ li {
 }
 
 .anagram-nav {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,11 +178,18 @@ li {
     color: #fff;
 }
 
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
 .htp-modal {
     background-color: #99ff99;
     position: fixed;
     width: 50%;
-    height: 50%;
+    min-height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,7 +233,6 @@ li {
 .main-menu-btn:hover {
     color: #8c1aff;
     background-color: #fff;
-    font-size: 120%;
 }
 
 .back-btn {
@@ -236,7 +247,6 @@ li {
 .back-btn:hover {
     color: #8c1aff;
     background-color: #fff;
-    font-size: 120%;
 }
 
 .back-btn a {
@@ -257,6 +267,7 @@ li {
 .reveal {
     visibility: visible;
     opacity: 1;
+    pointer-events: auto;
 }
 
 .hide {
