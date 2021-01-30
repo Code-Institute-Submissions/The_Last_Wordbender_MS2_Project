@@ -39,6 +39,7 @@ const anagramElement = document.getElementById('anagram')
 const clueElement = document.getElementById('clue')
 const timeLeftDisplay = document.querySelector('#timer')
 let shuffledAnagrams, currentAnagramIndex
+var anagramCount = 0
 
 $(document).ready(function() {
 
@@ -108,7 +109,9 @@ function nextAnagram() {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
         const anagram = createAnagram(shuffledAnagrams.answer)
         showAnagram(anagram, shuffledAnagrams.clue);
-}}
+}
+    anagramCount +=1
+}
 
 function showAnagram(anagram, clue) {
 
