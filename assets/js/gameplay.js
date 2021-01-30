@@ -37,8 +37,32 @@ const hardAnagrams = [
 const nextButton = document.getElementById('next-btn')
 const anagramElement = document.getElementById('anagram')
 const clueElement = document.getElementById('clue')
+const timeLeftDisplay = document.querySelector('#timer')
 let shuffledAnagrams, currentAnagramIndex
 
+$(document).ready(function() {
+
+    // This is to transition to the gameplay screen and start the game"
+    $('#start-btn').click(function() {
+        $(".anagram-nav").addClass("hide");
+        $(".gameplay-screen").addClass("reveal");
+        startGame();
+        countdownTimer();
+    }); 
+
+    // This is to transition back to the Anagram Atlantis navigation screen and reset the timer
+    $('.home-btn').click(function() {
+        $(".anagram-nav").removeClass("hide");
+        $(".gameplay-screen").removeClass("reveal");
+    });
+
+    // This to restart the game
+   $('.restart-btn').click(function() {
+        startGame();
+        resetTimer();
+        countdownTimer();
+    }); 
+});
 
 function startGame() {
     
@@ -115,35 +139,33 @@ function createAnagram(answer) {
 }
 
 function countdownTimer() {
+    var countdownTimer = setInterval(function() {
+        let timer = document.getElementById("timer")
+        timeLeft -= 1
+        timeLeftDisplay.innerText = timeLeft
+        console.log(timeLeft)
 
-    $("#timer").removeClass("yellow-timer");
-    $("#timer").removeClass("red-timer");
-    time = 30;
-
-    counterTime = setInterval(function () {
-        $("#timer").html(time);
-        time -=1;
-        if (time<16 && time>5) {
-            $("#timer").addClass("yellow-timer");
-        }
-        if (time<=5) {
-            $("#timer").addClass("red-timer");
-        }
-        if (time=0) {
-            $(".next-modal").addClass("reveal");
-            stopTimer();
-
-        }
-    }, 1000);
+        if(timeLeft <=0) {
+            clearInterval(countdownTimer)    
+        } else if (timeLeft >= 16) {
+            timer.classList.add("green-timer")
+        } else if (timeLeft >=5) {
+            timer.classList.remove("green-timer")
+            timer.classList.add("yellow-timer")
+        } else {
+            timer.classList.remove("yellow-timer")
+            timer.classList.add("red-timer")
+        } 
+    },1000);
 }
 
 function resetTimer() {
-    clearInterval(counterTime);
+    clearInterval(countdownTimer);
     countdownTimer();
 }
 
 function stopTimer() {
-    clearInterval(counterTime);
+    clearInterval(countdownTimer);
 }
 
 
