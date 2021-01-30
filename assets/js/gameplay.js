@@ -63,7 +63,7 @@ $(document).ready(function() {
     // This to restart the game
    $('.restart-btn').click(function() {
         startGame();
-        resetTimer();
+        clearInterval(countdownTimer);
         countdownTimer();
     }); 
 });

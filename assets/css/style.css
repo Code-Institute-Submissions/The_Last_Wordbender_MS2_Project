@@ -290,6 +290,10 @@ li {
     border: 5px solid #8c1aff;
     font-weight: bold;
     font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-btn {
