@@ -38,10 +38,12 @@ const nextButton = document.getElementById('next-btn')
 const anagramElement = document.getElementById('anagram')
 const clueElement = document.getElementById('clue')
 const timeLeftDisplay = document.querySelector('#timer')
+const timer = document.getElementById('timer')
 let shuffledAnagrams, currentAnagramIndex
 var anagramCount = 0
 var score = 0
 var anagramAnswer = document.getElementById('answer')
+let timeLeft = 30
 
 $(document).ready(function() {
 
@@ -50,7 +52,6 @@ $(document).ready(function() {
         $(".anagram-nav").addClass("hide");
         $(".gameplay-screen").addClass("reveal");
         startGame();
-        countdownTimer();
     }); 
 
     // This is to transition back to the Anagram Atlantis navigation screen and reset the timer
@@ -151,10 +152,10 @@ function createAnagram(answer) {
     return s;
 }
 
-function countdownTimer() {
+
 
     // this function is to start a countdown timer and display the time left in the related div
-    var countdownTimer = setInterval(function() {
+var countdownTimer = setInterval(function() {
         let timer = document.getElementById("timer")
         timeLeft -= 1
         timeLeftDisplay.innerText = timeLeft
@@ -172,7 +173,6 @@ function countdownTimer() {
             timer.classList.add("red-timer")
         } 
     },1000);
-}
 
 function resetTimer() {
     clearInterval(countdownTimer);
