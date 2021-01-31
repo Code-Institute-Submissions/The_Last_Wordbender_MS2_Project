@@ -62,8 +62,13 @@ $(document).ready(function() {
 
     // This to restart the game
    $('.restart-btn').click(function() {
+        clearInterval(timeLeft = 30);
+        timer.classList.remove("red-timer");
+        timer.classList.remove("yellow-timer");
+        timer.classList.add("green-timer");
+        score = 0;
+        anagramCount = 0;
         startGame();
-        clearInterval(countdownTimer);
     }); 
 });
 
@@ -162,6 +167,7 @@ var countdownTimer = setInterval(function() {
     if(timeLeft <=0) {
     clearInterval(timeLeft = 30);
     timer.classList.remove("red-timer");
+    timer.classList.remove("yellow-timer");
     timer.classList.add("green-timer");
     nextAnagram();
     } else if( timeLeft >= 16 ) {
@@ -179,6 +185,7 @@ var countdownTimer = setInterval(function() {
 function stopTimer() {
     clearInterval(countdownTimer);
 }
+
 
 
 function answerAnagram() {
