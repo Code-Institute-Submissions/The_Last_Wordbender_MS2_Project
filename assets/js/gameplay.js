@@ -157,30 +157,23 @@ function createAnagram(answer) {
 
 
     // this function is to start a countdown timer and display the time left in the related div
-function countdownTimer() {
-        timeLeft--;
-        timeLeftDisplay.innerText = timeLeft;
-        console.log(timeLeft);
-        timer.classList.remove("yellow-timer")
-        timer.classList.remove("red-timer")
+var countdownTimer = setInterval(function() {
 
-        counterTime = setInterval(function() {
-            if(timeLeft === 0) {
-                console.log("STOP! the timer should stop here!");
-                timeLeftDisplay.innerText = 30;
-                clearInterval(countdownTimer);
-                nextAnagram()   
-            } else if (timeLeft >= 16) {
-                timer.classList.add("green-timer")
-            } else if (timeLeft >=5) {
-                timer.classList.remove("green-timer")
-                timer.classList.add("yellow-timer")
-            } else {
-                timer.classList.remove("yellow-timer")
-                timer.classList.add("red-timer")
-            } 
-        },1000);
+    console.log(timeLeft)
+
+    if(timeLeft <=0) {
+    clearInterval(countdownTimer)
+    } else if( timeLeft >= 16 ) {
+    timer.classList.add("green-timer")
+    } else if( timeLeft >= 5 ) {
+    timer.classList.remove("green-timer")
+    timer.classList.add("yellow-timer")
+    } else {
+    timer.classList.remove("yellow-timer")
+    timer.classList.add("red-timer")
     }
+    timeLeft -= 1
+    }, 1000);
 
 function resetTimer() {
     clearInterval(counterTime);
