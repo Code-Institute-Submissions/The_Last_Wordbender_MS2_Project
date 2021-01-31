@@ -52,6 +52,7 @@ $(document).ready(function() {
         $(".anagram-nav").addClass("hide");
         $(".gameplay-screen").addClass("reveal");
         startGame();
+        countdownTimer();
     }); 
 
     // This is to transition back to the Anagram Atlantis navigation screen and reset the timer
@@ -156,50 +157,38 @@ function createAnagram(answer) {
 
 
     // this function is to start a countdown timer and display the time left in the related div
-var countdownTimer = setInterval(function() {
-        let timer = document.getElementById("timer")
-        timeLeft -= 1
-        timeLeftDisplay.innerText = timeLeft
-        console.log(timeLeft)
+function countdownTimer() {
+        timeLeft--;
+        timeLeftDisplay.innerText = timeLeft;
+        console.log(timeLeft);
+        timer.classList.remove("yellow-timer")
+        timer.classList.remove("red-timer")
 
-        if(timeLeft <=0) {
-            clearInterval(countdownTimer)
-            nextAnagram()   
-        } else if (timeLeft >= 16) {
-            timer.classList.add("green-timer")
-        } else if (timeLeft >=5) {
-            timer.classList.remove("green-timer")
-            timer.classList.add("yellow-timer")
-        } else {
-            timer.classList.remove("yellow-timer")
-            timer.classList.add("red-timer")
-        } 
-    },1000);
+        counterTime = setInterval(function() {
+            if(timeLeft === 0) {
+                console.log("STOP! the timer should stop here!");
+                timeLeftDisplay.innerText = 30;
+                clearInterval(countdownTimer);
+                nextAnagram()   
+            } else if (timeLeft >= 16) {
+                timer.classList.add("green-timer")
+            } else if (timeLeft >=5) {
+                timer.classList.remove("green-timer")
+                timer.classList.add("yellow-timer")
+            } else {
+                timer.classList.remove("yellow-timer")
+                timer.classList.add("red-timer")
+            } 
+        },1000);
+    }
 
 function resetTimer() {
-        let timer = document.getElementById("timer")
-        var timeLeft = 30
-        timeLeft -= 1
-        timeLeftDisplay.innerText = timeLeft
-        console.log(timeLeft)
-
-        if(timeLeft <=0) {
-            clearInterval(countdownTimer)
-            nextAnagram()    
-        } else if (timeLeft >= 16) {
-            timer.classList.add("green-timer")
-        } else if (timeLeft >=5) {
-            timer.classList.remove("green-timer")
-            timer.classList.add("yellow-timer")
-        } else {
-            timer.classList.remove("yellow-timer")
-            timer.classList.add("red-timer")
-        } 
-    }1000;
-
+    clearInterval(counterTime);
+    countdownTimer ();
+}
 
 function stopTimer() {
-    clearInterval(countdownTimer);
+    clearInterval(counterTime);
 }
 
 
@@ -224,16 +213,19 @@ function answerAnagram() {
     
 }
 
-if (anagramCount === 10 && timeLeft <= 0) {
-    docuent.getElementById('game-over-modal').classList.add("reveal");
-    finalScore();
+function gameDone() {
+    if (anagramCount === 10 && timeLeft <= 0) {
+        document.getElementById('game-over-modal').classList.add("reveal");
+        finalScore();
+    }
 }
+
 
 
 function finalScore() {
 
     // this function to display the final score and then may add how many anagrams out of ten were correct
-    $("#endgame-score").html(`You fnished the game with ${localStorage.getItem("gamePoints")} points`)
+    $("#endgame-score").html(`You finished the game with ${localStorage.getItem("gamePoints")} points`)
 }}
 
 
