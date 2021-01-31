@@ -97,7 +97,6 @@ function nextAnagram() {
     //the purpose of this function is to show the next Anagram
     anagramCount +=1;
     console.log(anagramCount);
-    resetTimer();
 
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
@@ -161,12 +160,13 @@ var countdownTimer = setInterval(function() {
     timeLeftDisplay.innerText = timeLeft;
 
     if(timeLeft <=0) {
-    clearInterval(countdownTimer)
-    resetTimer();
+    clearInterval(timeLeft = 30);
+    timer.classList.remove("red-timer");
+    timer.classList.add("green-timer");
     nextAnagram();
     } else if( timeLeft >= 16 ) {
     timer.classList.add("green-timer")
-    } else if( timeLeft >= 5 ) {
+    } else if( timeLeft >= 6 ) {
     timer.classList.remove("green-timer")
     timer.classList.add("yellow-timer")
     } else {
@@ -175,12 +175,6 @@ var countdownTimer = setInterval(function() {
     }
     timeLeft -= 1
     }, 1000);
-
-function resetTimer() {
-    clearInterval(countdownTimer);
-    var timeLeft = 30
-    console.log(timeLeft)
-}
 
 function stopTimer() {
     clearInterval(countdownTimer);
