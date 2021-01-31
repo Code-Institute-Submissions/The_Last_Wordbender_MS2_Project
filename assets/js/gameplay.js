@@ -77,6 +77,11 @@ $(document).ready(function() {
 function startGame() {
     
     anagramCount +=1;
+    clearInterval(timeLeft = 30);
+    timer.classList.remove("red-timer");
+    timer.classList.remove("yellow-timer");
+    timer.classList.add("green-timer");
+
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
@@ -186,26 +191,27 @@ function stopTimer() {
     clearInterval(countdownTimer);
 }
 
-
+function clearInput() {
+    document.getElementById("answer").innerText('');
+}
 
 function answerAnagram() {
 
     //need a function where people can submit the answer in the game and then the timers stop, if the answer is correct then they gain points based on difficulty level
-    stopTimer();
+    clearInterval(timeLeft = 30);
+    timer.classList.remove("red-timer");
+    timer.classList.remove("yellow-timer");
+    timer.classList.add("green-timer");
+    nextAnagram();
 
-    function answerSubmit(event) {
-    event.preventDefault();
-    }
-
-    const answerAnagram = document.getElementById('answer');
-    form.addEventListener('submit', answerAnagram);
-
-    if (anagramAnswer === answer) {
+    if (anagramAnswer.value === answer) {
         score = score + sessionStorage.getItem("gamePoints")
     }
     else {
         score = score
     }
+
+    console.log(score);
     
 }
 

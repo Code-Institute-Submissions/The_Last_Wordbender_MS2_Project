@@ -141,9 +141,9 @@
                     <div class="game-section">
                         <div id="anagram"></div>
                         <div id="clue"></div>
-                        <form onsubmit="return false">
+                        <form id="myForm" onsubmit="return false">
                         <input id="answer" type="text"><br>
-                        <button type="submit" id="answer-btn" class="btn btn-secondary">Enter</button>
+                        <input type="button" value="Enter" id="answer-btn" class="btn btn-secondary" onclick="answerAnagram(); clearInput()">
                         </form>
                     </div>
                 </div>
