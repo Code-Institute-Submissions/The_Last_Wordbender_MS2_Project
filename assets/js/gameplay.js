@@ -39,11 +39,11 @@ const anagramElement = document.getElementById('anagram')
 const clueElement = document.getElementById('clue')
 const timeLeftDisplay = document.querySelector('#timer')
 const timer = document.getElementById('timer')
-let shuffledAnagrams, currentAnagramIndex
+var shuffledAnagrams, currentAnagramIndex
 var anagramCount = 0
 var score = 0
 var anagramAnswer = document.getElementById('answer')
-let timeLeft = 30
+var timeLeft = 30
 
 $(document).ready(function() {
 
@@ -97,6 +97,7 @@ function nextAnagram() {
 
     //the purpose of this function is to show the next Anagram
     anagramCount +=1;
+    console.log(anagramCount);
     resetTimer();
 
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
@@ -162,7 +163,8 @@ var countdownTimer = setInterval(function() {
         console.log(timeLeft)
 
         if(timeLeft <=0) {
-            clearInterval(countdownTimer)    
+            clearInterval(countdownTimer)
+            nextAnagram()   
         } else if (timeLeft >= 16) {
             timer.classList.add("green-timer")
         } else if (timeLeft >=5) {
@@ -175,9 +177,26 @@ var countdownTimer = setInterval(function() {
     },1000);
 
 function resetTimer() {
-    clearInterval(countdownTimer);
-    countdownTimer();
-}
+        let timer = document.getElementById("timer")
+        var timeLeft = 30
+        timeLeft -= 1
+        timeLeftDisplay.innerText = timeLeft
+        console.log(timeLeft)
+
+        if(timeLeft <=0) {
+            clearInterval(countdownTimer)
+            nextAnagram()    
+        } else if (timeLeft >= 16) {
+            timer.classList.add("green-timer")
+        } else if (timeLeft >=5) {
+            timer.classList.remove("green-timer")
+            timer.classList.add("yellow-timer")
+        } else {
+            timer.classList.remove("yellow-timer")
+            timer.classList.add("red-timer")
+        } 
+    }1000;
+
 
 function stopTimer() {
     clearInterval(countdownTimer);
@@ -205,6 +224,10 @@ function answerAnagram() {
     
 }
 
+if (anagramCount === 10 && timeLeft <= 0) {
+    docuent.getElementById('game-over-modal').classList.add("reveal");
+    finalScore();
+}
 
 
 function finalScore() {
