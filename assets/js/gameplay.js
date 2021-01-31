@@ -52,7 +52,6 @@ $(document).ready(function() {
         $(".anagram-nav").addClass("hide");
         $(".gameplay-screen").addClass("reveal");
         startGame();
-        countdownTimer();
     }); 
 
     // This is to transition back to the Anagram Atlantis navigation screen and reset the timer
@@ -65,7 +64,6 @@ $(document).ready(function() {
    $('.restart-btn').click(function() {
         startGame();
         clearInterval(countdownTimer);
-        countdownTimer();
     }); 
 });
 
@@ -159,10 +157,13 @@ function createAnagram(answer) {
     // this function is to start a countdown timer and display the time left in the related div
 var countdownTimer = setInterval(function() {
 
-    console.log(timeLeft)
+    console.log(timeLeft);
+    timeLeftDisplay.innerText = timeLeft;
 
     if(timeLeft <=0) {
     clearInterval(countdownTimer)
+    resetTimer();
+    nextAnagram();
     } else if( timeLeft >= 16 ) {
     timer.classList.add("green-timer")
     } else if( timeLeft >= 5 ) {
@@ -176,12 +177,13 @@ var countdownTimer = setInterval(function() {
     }, 1000);
 
 function resetTimer() {
-    clearInterval(counterTime);
-    countdownTimer ();
+    clearInterval(countdownTimer);
+    var timeLeft = 30
+    console.log(timeLeft)
 }
 
 function stopTimer() {
-    clearInterval(counterTime);
+    clearInterval(countdownTimer);
 }
 
 
