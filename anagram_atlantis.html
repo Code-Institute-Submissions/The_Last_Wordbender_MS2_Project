@@ -10,8 +10,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script defer type="text/javascript" src="assets/js/anagram.js"></script>
-<script defer type="text/javascript" src="assets/js/gameplay.js"></script>
+
 
 <title>Anagram Atlantis</title>
 </head>
@@ -141,19 +140,14 @@
                     <div class="game-section">
                         <div id="anagram"></div>
                         <div id="clue"></div>
-                        <form id="myForm" onsubmit="return false">
+                        <form id="myForm">
                         <input id="answer" type="text"><br>
-                        <input type="button" value="Enter" id="answer-btn" class="btn btn-secondary" onclick="answerAnagram(); clearInput()">
+                        <!-- <a id="answer-btn" class="btn btn-secondary" onclick="answerAnagram(); clearInput(); gameDone()">Enter</a> -->
+                        <a href="#" id="answer-btn" class="btn btn-secondary">Enter</a>
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="row modal">
-                <div class="next-modal">
-                    <h3 class="right-or-wrong"></h3><br>
-                    <button class="next-btn">Next</button>    
-                </div>
-            </div>    
+            </div>  
             <div class="row modal">   
                 <div class="game-over-modal" id="game-over-modal">
                     <h3 class="game-over-h3">End of Game</h3><br>
@@ -167,5 +161,8 @@
     </main>   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="assets/js/gameplay.js"></script>
+<script type="text/javascript" src="assets/js/anagram.js"></script>
 </body>
 </html>

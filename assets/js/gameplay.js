@@ -70,13 +70,16 @@ $(document).ready(function() {
         anagramCount = 0;
         startGame();
     }); 
+
+ 
+
 });
 
 // required functions is a way to keep shuffling through the anagrams and then to stop after 10 and trigger the game-over-modal which will display the final score
 
 function startGame() {
     
-    anagramCount +=1;
+    
     clearInterval(timeLeft = 30);
     timer.classList.remove("red-timer");
     timer.classList.remove("yellow-timer");
@@ -100,41 +103,42 @@ function startGame() {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
         const anagram = createAnagram(shuffledAnagrams.answer)
         showAnagram(anagram, shuffledAnagrams.clue);
+} anagramCount +=1;
 }
 
 function nextAnagram() {
 
     //the purpose of this function is to show the next Anagram
-    anagramCount +=1;
-    console.log(anagramCount);
+    
 
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
-    const anagram = createAnagram(shuffledAnagrams.answer)
+    const anagram = createAnagram(shuffledAnagrams.answer);
     showAnagram(anagram, shuffledAnagrams.clue);
     
 
     // on medium mode I want to shuffle through the mediumAnagrams object
     } else if (sessionStorage.getItem("gamemode") === "medium") {
         shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
-        const anagram = createAnagram(shuffledAnagrams.answer)
+        const anagram = createAnagram(shuffledAnagrams.answer);
         showAnagram(anagram, shuffledAnagrams.clue);
 
     // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
     } else {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
-        const anagram = createAnagram(shuffledAnagrams.answer)
+        const anagram = createAnagram(shuffledAnagrams.answer);
         showAnagram(anagram, shuffledAnagrams.clue);
-}
-    anagramCount +=1
+    }
+    anagramCount +=1;
+    console.log(anagramCount);
 }
 
 function showAnagram(anagram, clue) {
 
     // this function is to show the anagram in the related div
-    anagramElement.innerText = anagram
-    clueElement.innerText = clue
+    anagramElement.innerText = anagram;
+    clueElement.innerText = clue;
     
 }
 
@@ -192,8 +196,10 @@ function stopTimer() {
 }
 
 function clearInput() {
-    document.getElementById("answer").innerText('');
+    document.getElementById("answer").value = '';
 }
+
+
 
 function answerAnagram() {
 
@@ -205,7 +211,8 @@ function answerAnagram() {
     nextAnagram();
 
     if (anagramAnswer.value === answer) {
-        score = score + sessionStorage.getItem("gamePoints")
+        score = score + sessionStorage.getItem("gamePoints");
+        correctAnswers += 1;
     }
     else {
         score = score
@@ -215,24 +222,28 @@ function answerAnagram() {
     
 }
 
-function gameDone() {
-    if (anagramCount === 10 && timeLeft <= 0) {
-        document.getElementById('game-over-modal').classList.add("reveal");
+const isGameDone = setInterval(function() {
+    if (anagramCount = 10 && timeLeft <= 0) {
+        document.getElementById(game-over-modal).classList.add("reveal");
         finalScore();
     }
-}
+},1000)
+
+    
+
+clearInterval(isGameDone);
 
 
 
 function finalScore() {
 
     // this function to display the final score and then may add how many anagrams out of ten were correct
-    $("#endgame-score").html(`You finished the game with ${localStorage.getItem("gamePoints")} points`)
-}}
+    $("#endgame-score").html(`You finished the game with ${localStorage.getItem("gamePoints")} points! You got ${correctAnswers} anagrams correct.`)
+}
 
+let answerBtn = document.querySelector('#answer-btn');
 
-
-
-
-
-
+answerBtn.addEventListener('click', () => {
+    answerAnagram();
+    clearInput();
+})
