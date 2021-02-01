@@ -260,17 +260,6 @@ li {
     flex-direction: column;
 }
 
-.reveal {
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.hide {
-    visibility: hidden;
-    opacity: 0;
-}
-
 .green-timer {
     background-color: #00cc00;
 }
@@ -345,7 +334,7 @@ input[type=text] {
     padding: 10px 20px;
 }
 
-.next-modal {
+.game-over-modal {
     background-color: #99ff99;
     position: absolute;
     width: 50%;
@@ -363,20 +352,13 @@ input[type=text] {
     transition: visibility 0s, opacity 0.5s;
 }
 
-.game-over-modal {
-    background-color: #99ff99;
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    font-size: 12px;
-    border-radius: 20px;
-    color: #000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+.reveal {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hide {
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s;
 }

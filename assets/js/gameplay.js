@@ -44,6 +44,8 @@ var anagramCount = 0
 var score = 0
 var anagramAnswer = document.getElementById('answer')
 var timeLeft = 30
+var answerButtonClicked = false
+var correctAnswers = 0
 
 $(document).ready(function() {
 
@@ -51,6 +53,8 @@ $(document).ready(function() {
     $('#start-btn').click(function() {
         $(".anagram-nav").addClass("hide");
         $(".gameplay-screen").addClass("reveal");
+        score = 0;
+        anagramCount = 0;
         startGame();
     }); 
 
@@ -63,6 +67,7 @@ $(document).ready(function() {
     // This to restart the game
    $('.restart-btn').click(function() {
         clearInterval(timeLeft = 30);
+        document.getElementById("game-over-modal").classList.remove("reveal")
         timer.classList.remove("red-timer");
         timer.classList.remove("yellow-timer");
         timer.classList.add("green-timer");
@@ -109,7 +114,7 @@ function startGame() {
 function nextAnagram() {
 
     //the purpose of this function is to show the next Anagram
-    
+    answerButtonClicked = false;
 
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
@@ -223,16 +228,15 @@ function answerAnagram() {
 }
 
 const isGameDone = setInterval(function() {
-    if (anagramCount = 10 && timeLeft <= 0) {
-        document.getElementById(game-over-modal).classList.add("reveal");
+    if (anagramCount == 10) {
+    console.log("if function is being reached")
+    if (timeLeft <= 0 || answerButtonClicked === true) {
+        stopTimer();
+        document.getElementById("game-over-modal").classList.add("reveal");
         finalScore();
-    }
+        clearInterval(isGameDone);
+    }}
 },1000)
-
-    
-
-clearInterval(isGameDone);
-
 
 
 function finalScore() {
@@ -246,4 +250,5 @@ let answerBtn = document.querySelector('#answer-btn');
 answerBtn.addEventListener('click', () => {
     answerAnagram();
     clearInput();
+    answerButtonClicked = true;
 })
