@@ -11,7 +11,7 @@ This web application is for a series of fun and interactive word games. An immer
 * As a site owner, I want the game to be sufficiently challenging to provide a challenge to the site users and a rewarding experience.
 * As a site owner, I want the game to be educational and mentally stimulating to provide a valuable experience to the site users.
 * As a site user, I want the game to be interactive and provide an enjoyable experience.
-* As a site user, I want the game to challenging and provide a rewarding experience.
+* As a site user, I want the game to be challenging and provide a rewarding experience.
 * As a site user, I want to be able to achieve a score so that I can compare my score to others.
 
 ### Strategy Plane
@@ -73,25 +73,64 @@ The landing page background is dark and plain representative of the unknown orig
 4. Balsamiq - Balsamiq was used to create the wireframes to provide a guide for the design.
 
 ## Testing
+The W3C Markup Validator and W3C CSS Validator were used to validate every page of the project to avoid any syntax errors.
 
+* W3C Markup Validator - [issues on anagram_atlantis.html](https://user-images.githubusercontent.com/46917417/106595574-a7607080-654b-11eb-9cef-baf3a5c67917.png) and [issues on index.html page](https://user-images.githubusercontent.com/46917417/106595787-f908fb00-654b-11eb-840e-041bd2b32f81.png).
+* W3C CSS Validator - [issue on style.css file](https://user-images.githubusercontent.com/46917417/106595985-500ed000-654c-11eb-8dbc-175e8372969a.png)
+
+Beautifytools.com utilised to validate Javascript code for each page:
+
+* [Index.js results](https://user-images.githubusercontent.com/46917417/106596278-b0057680-654c-11eb-9f5a-dd1535a28fc0.png)
+* [Anagram.js results](https://user-images.githubusercontent.com/46917417/106596413-de835180-654c-11eb-81fa-e0122d5fa68d.png)
+* [Gameplay.js results](https://user-images.githubusercontent.com/46917417/106596655-3d48cb00-654d-11eb-8e4b-276811bbecca.png)
 
 ## User Stories Testing
- 
+1. As a site owner, I want the game to be visually appealing to attract visitors to the site to play the game.
+* On landing page options are clear and stand out with the anagram game option being a contrast to the darker theme of the landing page. The anagram game home screen has bold and vibrant colours which are appealing.
+2. As a site owner, I want the game to be sufficiently challenging to provide a challenge to the site users and a rewarding experience.
+* There are 3 difficulty levels the user can select from in the anagram home page. The hard difficulty is challenging and even as the creator of the anagrams going back in after some time not looking at those anagrams and trying to solve them was a challenge.
+3. As a site owner, I want the game to be educational and mentally stimulating to provide a valuable experience to the site users.
+* The game provides a wide variety of words and definitions for the user to learn through solving of the anagrams.
+4. As a site user, I want the game to be interactive and provide an enjoyable experience.
+* Transitions in and out between the anagram home game and gameplay screen provide an interactive experience. The game is challenging and going back to try and get all the anagrams provides an enjoyable experience.
+5. As a site user, I want the game to be challenging and provide a rewarding experience.
+* There are 3 difficulty levels the user can select from in the anagram home page. The hard difficulty is challenging and even as the creator of the anagrams going back in after some time not looking at those anagrams and trying to solve them was a challenge.
+6. As a site user, I want to be able to achieve a score so that I can compare my score to others.
+* Upon finishing the game, you are given a score and the amount of anagrams you got right. In future features there would be a high scores and leaderboard functionality to enable more interactive comparison of high scores between users.
 
 ## Interactive Testing
-
+* Selected the different difficulty levels and checked it was showing me the anagrams from the relevant set of anagrams for that difficulty
+* Clicked start game and checked it would transition to the gameplay screen.
+* Click home button to check it would take me back to the anagram home page.
+* Once the game was starting, I clicked restart button to check it would restart the game.
+* Clicked start game and saw the timer started and that when timer went to 15 seconds it went to yellow and when it went to 5 seconds it went to red. Also upon the next anagram it was reset back to green.
+* Completed the game and checked that the end of game pop up appeared and gave the score and number of correct anagrams.
+* Checked the score and number of correct anagrams was right by going through multiple runs of the game and answering differing amounts of anagrams right or wrong.
 
 ## Further Testing
-
+* The game was tested on Google Chrome, Safari and Firefox.
+* The game was tested on laptop, Iphone and Samsung Galaxy S8.
+* A large amount of testing was done to ensure all links across pages are working correctly.
+* A friend, who is a fullstack developer, was asked to review the site and documentation to point out any bugs or user experience issues.
+* Feedback and testing provided by friends and family.
 
 ## Fixed Bugs/Issues
-
+* I fixed an issue where if users used capital letters in their answer then it was being considered wrong by the game logic. I utilised .toLowerCase() function to resolve this issue.
+* I fixed an issue where users would input their answer and press enter but the text field wouldn't clear. I created function clearInput() to resolve this.
 
 ## Known Bugs/Issues
-
+* Using Lighthouse report found that performance is only rated a 76.
+* There is a known issue where if you finish the game then it doesn't restart the game subsequently and you have to refresh the page.
+* There is a known issue where the game only goes through nine anagrams that you have to answer instead of the intended ten. Issue to do with the updating of the anagramCount being duplicated by unclear from review on how to resolve.
 
 ## Future Features
-The main future features is to develop and release the other three word games: Crossword Cornucopia, Hangman Heights and Riddle Rapture.
+If given more time and further development of skills then I would suggest these features to be added:
+* The main future features is to develop and release the other three word games: Crossword Cornucopia, Hangman Heights and Riddle Rapture.
+* Perform detailed coded and automated testing of the Javascript game logic
+* Resolve all known bugs and issues
+* Produce a high score function so that users of the game can see their previous high scores and attempt to beat it to add engagement and replayability to the game
+* Incorporate sound into the game with the ability to turn the sound on and off at the user's discretion
+* Produce a leaderboard that can store the highest of an user's score and compare it to other users to add competitiveness
 
 
 ## Deployment

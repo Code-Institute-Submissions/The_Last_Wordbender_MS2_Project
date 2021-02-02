@@ -1,21 +1,20 @@
-var easyAnagrams
-var mediumAnagrams
-var hardAnagrams
-const nextButton = document.getElementById('next-btn')
-const anagramElement = document.getElementById('anagram')
-const clueElement = document.getElementById('clue')
-const timeLeftDisplay = document.querySelector('#timer')
-const timer = document.getElementById('timer')
-var shuffledAnagrams, currentAnagramIndex
-var anagramCount = 0
-var score = 0
-var anagramAnswer = document.getElementById('answer')
-var timeLeft = 30
-var answerButtonClicked = false
-var correctAnswers = 0
-var anagram 
-var answer
-var indexAnagram
+var easyAnagrams;
+var mediumAnagrams;
+var hardAnagrams;
+const anagramElement = document.getElementById('anagram');
+const clueElement = document.getElementById('clue');
+const timeLeftDisplay = document.querySelector('#timer');
+const timer = document.getElementById('timer');
+var shuffledAnagrams, currentAnagramIndex;
+var anagramCount = 0;
+var score = 0;
+var anagramAnswer = document.getElementById('answer');
+var timeLeft = 30;
+var answerButtonClicked = false;
+var correctAnswers = 0;
+var anagram ;
+var answer;
+var indexAnagram;
 
 $(document).ready(function() {
 
@@ -62,7 +61,7 @@ function startGame() {
     {answer: "karma", clue: "what comes around goes around"},
     {answer: "revenge", clue: "payback"},
     {answer: "shipwreck", clue: "the Titanic"},
-    {answer: "poetry", clue: "... in motion"}]
+    {answer: "poetry", clue: "... in motion"}];
 
     mediumAnagrams = [
     {answer: "rejoice", clue: "celebrate"},
@@ -74,7 +73,7 @@ function startGame() {
     {answer: "heretic", clue: "a blasphemous person"},
     {answer: "subordinate", clue: "member of the rank and file"},
     {answer: "citadel", clue: "fortress"},
-    {answer: "paramount", clue: "important"}]
+    {answer: "paramount", clue: "important"}];
 
     hardAnagrams = [
     {answer: "tyrannical", clue: "oppressive"},
@@ -86,7 +85,7 @@ function startGame() {
     {answer: "philanthropic", clue: "charitable intentions"},
     {answer: "impervious", clue: "no entry"},
     {answer: "emphatic", clue: "forceful"},
-    {answer: "prehistoric", clue: "time of the dinosaurs"}]
+    {answer: "prehistoric", clue: "time of the dinosaurs"}];
     
     anagramCount = 0;
     clearInterval(timeLeft = 30);
@@ -99,7 +98,7 @@ function startGame() {
     indexAnagram = [Math.floor(Math.random()*easyAnagrams.length)];
     shuffledAnagrams = easyAnagrams[indexAnagram];
     easyAnagrams.splice(indexAnagram,1);
-    anagram = createAnagram(shuffledAnagrams.answer)
+    anagram = createAnagram(shuffledAnagrams.answer);
     answer = shuffledAnagrams.answer;
     showAnagram(anagram, shuffledAnagrams.clue);
     
@@ -109,7 +108,7 @@ function startGame() {
         indexAnagram = [Math.floor(Math.random()*mediumAnagrams.length)];
         shuffledAnagrams = mediumAnagrams[indexAnagram];
         mediumAnagrams.splice(indexAnagram,1);
-        anagram = createAnagram(shuffledAnagrams.answer)
+        anagram = createAnagram(shuffledAnagrams.answer);
         answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
 
@@ -209,15 +208,15 @@ var countdownTimer = setInterval(function() {
     if (anagramCount == 10) {isGameDone();}   
     nextAnagram();
     } else if( timeLeft >= 16 ) {
-    timer.classList.add("green-timer")
+    timer.classList.add("green-timer");
     } else if( timeLeft >= 6 ) {
-    timer.classList.remove("green-timer")
-    timer.classList.add("yellow-timer")
+    timer.classList.remove("green-timer");
+    timer.classList.add("yellow-timer");
     } else {
-    timer.classList.remove("yellow-timer")
-    timer.classList.add("red-timer")
+    timer.classList.remove("yellow-timer");
+    timer.classList.add("red-timer");
     }
-    timeLeft -= 1
+    timeLeft -= 1;
     }, 1000);
 
 function stopTimer() {
@@ -234,12 +233,12 @@ function answerAnagram(answer) {
 
     //need a function where people can submit the answer in the game and then the timers stop, if the answer is correct then they gain points based on difficulty level
 
-    if (anagramAnswer.value === answer) {
+    if (anagramAnswer.value.toLowerCase() === answer) {
         score = score + parseInt(sessionStorage.getItem("gamePoints"));
         correctAnswers += 1;
     }
     else {
-        score += 0
+        score += 0;
     }
 
     console.log(score);
