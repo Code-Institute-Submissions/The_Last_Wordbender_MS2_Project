@@ -10,14 +10,8 @@ $(document).ready(function() {
         $(".htp-modal").addClass("reveal");
     });
 
-    // this is to activate the high scores modal being shown
-    $("#high-scores").click(function() {
-        $(".hs-modal").addClass("reveal");
-    });
-
     // this is to close any modals in the html file
     $(".close-btn").click(function() {
-        $(".hs-modal").removeClass("reveal");
         $(".htp-modal").removeClass("reveal");
     });
 

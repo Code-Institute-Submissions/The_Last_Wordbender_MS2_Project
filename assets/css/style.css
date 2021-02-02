@@ -195,24 +195,6 @@ li {
     transition: visibility 0s, opacity 0.5s;
 }
 
-.hs-modal {
-    background-color: #99ff99;
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 12px;
-    border-radius: 20px;
-    color: #000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s;
-}
-
 .main-menu-btn {
     margin-top: 10px;
     border-radius: 15px;

@@ -34,7 +34,7 @@ $(document).ready(function() {
 
     // This to restart the game
    $('.restart-btn').click(function() {
-        document.getElementById("game-over-modal").classList.remove("reveal")
+        document.getElementById("game-over-modal").classList.remove("reveal");
         timer.classList.remove("red-timer");
         timer.classList.remove("yellow-timer");
         timer.classList.add("green-timer");
