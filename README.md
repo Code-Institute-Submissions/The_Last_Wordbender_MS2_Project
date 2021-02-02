@@ -1,4 +1,4 @@
-The Last Wordbender / Anagram Atlantis
+# [The Last Wordbender / Anagram Atlantis](https://oludare89.github.io/The_Last_Wordbender_MS2_Project/)
 
 <img src="assets/images/last_word_bender_pic.jpg" width="240" height="240">
 
@@ -47,16 +47,19 @@ The colour scheme of the Anagram Atlantis game is blue, purple and white which a
 The font used is Fondamento from Google Fonts.
 
 #### Imagery
+There is no significant imagery used throughout the website.
 
+The landing page background is dark and plain representative of the unknown origin of the character, the Last Wordbender. In the Anagram Atlantis navigation screen and gameplay screen then a underwater background is used with imagery of statues to represent the underwater realm of Yemoja.
 
 ### Wireframes
-* Home Page Wireframe - 
-* Techniques Page Wireframe - 
-* Timetable Page Wireframe - 
-* Sign Up Page Wireframe - 
+* Landing Page Wireframe - [Original](https://user-images.githubusercontent.com/46917417/106578423-665e6100-6537-11eb-9751-6319b1bb1e8f.png) [Updated](https://user-images.githubusercontent.com/46917417/106580455-d7067d00-6539-11eb-839b-bbcdb86bdf77.png)
+* Anagram Start Game Screen Wireframe - [Original](https://user-images.githubusercontent.com/46917417/106578497-79713100-6537-11eb-9496-62ba17e08280.png) [Updated](https://user-images.githubusercontent.com/46917417/106580600-fef5e080-6539-11eb-96ce-e034a032f300.png)
+* Game Play Screen Wireframe - [Original](https://user-images.githubusercontent.com/46917417/106578608-9a398680-6537-11eb-93c6-345f69adafb3.png) [Updated](https://user-images.githubusercontent.com/46917417/106580793-13d27400-653a-11eb-9825-e69ab78b931e.png)
+* High Scores Screen Wireframe - [Original](https://user-images.githubusercontent.com/46917417/106578688-b4736480-6537-11eb-993f-3d6d04ac5387.png) [Updated](https://user-images.githubusercontent.com/46917417/106580905-2fd61580-653a-11eb-9b46-cadb4137ff73.png)
 
 ## Features
-
+* Responsive and functional on all device sizes
+* Interactive
 
 ## Technologies Used
 * HTML5
@@ -123,10 +126,14 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 * Bootstrap4 - The Bootstrap library used throughout the project to make site responsive using the Bootstrap Grid System. 
 
 ### Media
-
+* [Last Wordbender image in README file](https://www.shutterstock.com/image-vector/assassin-ninja-esport-logo-gaming-download-1456021232) by [Aries Nander](https://www.shutterstock.com/g/Aris+Niandar)
+* [Anagram Atlantis background image](https://www.shutterstock.com/image-illustration/3d-illustration-inspired-by-legend-lost-1285795102) by [Fer Gregory](https://www.shutterstock.com/g/fergregory)
 
 ### Written Content
 All written content produced by developer.
 
 ### Acknowledgements
 * My Mentor for helpful feedback.
+* Code Institute tutors Johann and Michael for technical assistance on Javascript code.
+* Feedback from Adnan Ahmed "[AAAdnan](https://github.com/AAAdnan)".
+* Feedback from Tim Davey
