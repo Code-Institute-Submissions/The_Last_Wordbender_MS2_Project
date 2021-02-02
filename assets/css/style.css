@@ -345,3 +345,14 @@ input[type=text] {
     visibility: hidden;
     opacity: 0;
 }
+
+#anagram {
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+}
+
+#clue {
+    font-size: 18px;
+    color: #fff;
+}
