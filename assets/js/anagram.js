@@ -24,17 +24,17 @@ $(document).ready(function() {
     //This is for setting the game difficulty
     $("#btn-easy").click(function() {
         sessionStorage.setItem("gamemode", "easy");
-        sessionStorage.setItem("gamePoints","50");
+        sessionStorage.setItem("gamePoints",50);
     });
 
     $("#btn-medium").click(function() {
         sessionStorage.setItem("gamemode", "medium");
-        sessionStorage.setItem("gamePoints","100");
+        sessionStorage.setItem("gamePoints",100);
     });
 
     $("#btn-easy").click(function() {
         sessionStorage.setItem("gamemode", "hard");
-        sessionStorage.setItem("gamePoints","200");
+        sessionStorage.setItem("gamePoints",200);
     });
 
     

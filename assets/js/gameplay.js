@@ -46,6 +46,8 @@ var anagramAnswer = document.getElementById('answer')
 var timeLeft = 30
 var answerButtonClicked = false
 var correctAnswers = 0
+var anagram 
+var answer
 
 $(document).ready(function() {
 
@@ -53,8 +55,6 @@ $(document).ready(function() {
     $('#start-btn').click(function() {
         $(".anagram-nav").addClass("hide");
         $(".gameplay-screen").addClass("reveal");
-        score = 0;
-        anagramCount = 0;
         startGame();
     }); 
 
@@ -93,20 +93,23 @@ function startGame() {
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
-    const anagram = createAnagram(shuffledAnagrams.answer)
+    anagram = createAnagram(shuffledAnagrams.answer)
+    answer = shuffledAnagrams.answer;
     showAnagram(anagram, shuffledAnagrams.clue);
     
 
     // on medium mode I want to shuffle through the mediumAnagrams object
     } else if (sessionStorage.getItem("gamemode") === "medium") {
         shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
-        const anagram = createAnagram(shuffledAnagrams.answer)
+        anagram = createAnagram(shuffledAnagrams.answer)
+        answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
 
     // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
     } else {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
-        const anagram = createAnagram(shuffledAnagrams.answer)
+        anagram = createAnagram(shuffledAnagrams.answer)
+        answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
 } anagramCount +=1;
 }
@@ -119,20 +122,23 @@ function nextAnagram() {
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
     shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
-    const anagram = createAnagram(shuffledAnagrams.answer);
+    anagram = createAnagram(shuffledAnagrams.answer);
+    answer = shuffledAnagrams.answer;
     showAnagram(anagram, shuffledAnagrams.clue);
     
 
     // on medium mode I want to shuffle through the mediumAnagrams object
     } else if (sessionStorage.getItem("gamemode") === "medium") {
         shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
-        const anagram = createAnagram(shuffledAnagrams.answer);
+        anagram = createAnagram(shuffledAnagrams.answer);
+        answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
 
     // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
     } else {
         shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
-        const anagram = createAnagram(shuffledAnagrams.answer);
+        anagram = createAnagram(shuffledAnagrams.answer);
+        answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
     }
     anagramCount +=1;
@@ -206,24 +212,25 @@ function clearInput() {
 
 
 
-function answerAnagram() {
+function answerAnagram(answer) {
 
     //need a function where people can submit the answer in the game and then the timers stop, if the answer is correct then they gain points based on difficulty level
+
+    if (anagramAnswer.value === answer) {
+        score = score + parseInt(sessionStorage.getItem("gamePoints"));
+        correctAnswers += 1;
+    }
+    else {
+        score += 0
+    }
+
+    console.log(score);
+    console.log(correctAnswers);
     clearInterval(timeLeft = 30);
     timer.classList.remove("red-timer");
     timer.classList.remove("yellow-timer");
     timer.classList.add("green-timer");
     nextAnagram();
-
-    if (anagramAnswer.value === answer) {
-        score = score + sessionStorage.getItem("gamePoints");
-        correctAnswers += 1;
-    }
-    else {
-        score = score
-    }
-
-    console.log(score);
     
 }
 
@@ -242,13 +249,13 @@ const isGameDone = setInterval(function() {
 function finalScore() {
 
     // this function to display the final score and then may add how many anagrams out of ten were correct
-    $("#endgame-score").html(`You finished the game with ${localStorage.getItem("gamePoints")} points! You got ${correctAnswers} anagrams correct.`)
+    $("#endgame-score").html(`You finished the game with ${score} points! You got ${correctAnswers} anagrams correct.`)
 }
 
 let answerBtn = document.querySelector('#answer-btn');
 
 answerBtn.addEventListener('click', () => {
-    answerAnagram();
+    answerAnagram(answer);
     clearInput();
     answerButtonClicked = true;
 })
