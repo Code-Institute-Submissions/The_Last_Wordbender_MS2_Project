@@ -228,6 +228,21 @@ li {
     text-decoration: none;
 }
 
+.dropdown-toggle {
+    background-color: #8c1aff;
+}
+
+.dropdown-item {
+    color: #fff;
+    border-radius: 15px;
+    background-color: #8c1aff;
+    padding: 5px 5px 5px 5px;
+}
+
+.dropdown-item:hover {
+    color: #8c1aff;
+    background-color: #fff;
+}
 
 
 /*...................Gameplay page*/

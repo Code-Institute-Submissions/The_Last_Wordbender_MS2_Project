@@ -26,7 +26,7 @@ $(document).ready(function() {
         sessionStorage.setItem("gamePoints",100);
     });
 
-    $("#btn-easy").click(function() {
+    $("#btn-hard").click(function() {
         sessionStorage.setItem("gamemode", "hard");
         sessionStorage.setItem("gamePoints",200);
     });
