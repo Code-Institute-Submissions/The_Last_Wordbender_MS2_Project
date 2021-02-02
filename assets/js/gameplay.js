@@ -1,39 +1,6 @@
-const easyAnagrams = [
-    {answer: "calm", clue: "peace"},
-    {answer: "lantern", clue: "guiding light"},
-    {answer: "blemish", clue: "imperfection"},
-    {answer: "divine", clue: "holy"},
-    {answer: "emotion", clue: "feelings"},
-    {answer: "rotation", clue: "circular"},
-    {answer: "karma", clue: "what comes around goes around"},
-    {answer: "revenge", clue: "payback"},
-    {answer: "shipwreck", clue: "the Titanic"},
-    {answer: "poetry", clue: "... in motion"}]
-
-const mediumAnagrams = [
-    {answer: "rejoice", clue: "celebrate"},
-    {answer: "elevate", clue: "higher"},
-    {answer: "invulnerable", clue: "can't be hurt"},
-    {answer: "liberty", clue: "freedom"},
-    {answer: "scarce", clue: "hard to find"},
-    {answer: "zealot", clue: "a true fanatic"},
-    {answer: "heretic", clue: "a blasphemous person"},
-    {answer: "subordinate", clue: "member of the rank and file"},
-    {answer: "citadel", clue: "fortress"},
-    {answer: "paramount", clue: "important"}]
-
-const hardAnagrams = [
-    {answer: "tyrannical", clue: "oppressive"},
-    {answer: "meticulous", clue: "in great detail"},
-    {answer: "miniscule", clue: "tiny"},
-    {answer: "flagrant", clue: "brazen wrongdoing"},
-    {answer: "juxtapostion", clue: "side by side comparison"},
-    {answer: "paradox", clue: "a contradiction"},
-    {answer: "philanthropic", clue: "charitable intentions"},
-    {answer: "impervious", clue: "no entry"},
-    {answer: "emphatic", clue: "forceful"},
-    {answer: "prehistoric", clue: "time of the dinosaurs"}]
-
+var easyAnagrams
+var mediumAnagrams
+var hardAnagrams
 const nextButton = document.getElementById('next-btn')
 const anagramElement = document.getElementById('anagram')
 const clueElement = document.getElementById('clue')
@@ -48,6 +15,7 @@ var answerButtonClicked = false
 var correctAnswers = 0
 var anagram 
 var answer
+var indexAnagram
 
 $(document).ready(function() {
 
@@ -66,7 +34,6 @@ $(document).ready(function() {
 
     // This to restart the game
    $('.restart-btn').click(function() {
-        clearInterval(timeLeft = 30);
         document.getElementById("game-over-modal").classList.remove("reveal")
         timer.classList.remove("red-timer");
         timer.classList.remove("yellow-timer");
@@ -74,6 +41,7 @@ $(document).ready(function() {
         score = 0;
         anagramCount = 0;
         startGame();
+        clearInterval(timeLeft = 30);
     }); 
 
  
@@ -83,8 +51,44 @@ $(document).ready(function() {
 // required functions is a way to keep shuffling through the anagrams and then to stop after 10 and trigger the game-over-modal which will display the final score
 
 function startGame() {
+
+    easyAnagrams = [
+    {answer: "calm", clue: "peace"},
+    {answer: "lantern", clue: "guiding light"},
+    {answer: "blemish", clue: "imperfection"},
+    {answer: "divine", clue: "holy"},
+    {answer: "emotion", clue: "feelings"},
+    {answer: "rotation", clue: "circular"},
+    {answer: "karma", clue: "what comes around goes around"},
+    {answer: "revenge", clue: "payback"},
+    {answer: "shipwreck", clue: "the Titanic"},
+    {answer: "poetry", clue: "... in motion"}]
+
+    mediumAnagrams = [
+    {answer: "rejoice", clue: "celebrate"},
+    {answer: "elevate", clue: "higher"},
+    {answer: "invulnerable", clue: "can't be hurt"},
+    {answer: "liberty", clue: "freedom"},
+    {answer: "scarce", clue: "hard to find"},
+    {answer: "zealot", clue: "a true fanatic"},
+    {answer: "heretic", clue: "a blasphemous person"},
+    {answer: "subordinate", clue: "member of the rank and file"},
+    {answer: "citadel", clue: "fortress"},
+    {answer: "paramount", clue: "important"}]
+
+    hardAnagrams = [
+    {answer: "tyrannical", clue: "oppressive"},
+    {answer: "meticulous", clue: "in great detail"},
+    {answer: "miniscule", clue: "tiny"},
+    {answer: "flagrant", clue: "brazen wrongdoing"},
+    {answer: "juxtapostion", clue: "side by side comparison"},
+    {answer: "paradox", clue: "a contradiction"},
+    {answer: "philanthropic", clue: "charitable intentions"},
+    {answer: "impervious", clue: "no entry"},
+    {answer: "emphatic", clue: "forceful"},
+    {answer: "prehistoric", clue: "time of the dinosaurs"}]
     
-    
+    anagramCount = 0;
     clearInterval(timeLeft = 30);
     timer.classList.remove("red-timer");
     timer.classList.remove("yellow-timer");
@@ -92,7 +96,9 @@ function startGame() {
 
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
-    shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
+    indexAnagram = [Math.floor(Math.random()*easyAnagrams.length)];
+    shuffledAnagrams = easyAnagrams[indexAnagram];
+    easyAnagrams.splice(indexAnagram,1);
     anagram = createAnagram(shuffledAnagrams.answer)
     answer = shuffledAnagrams.answer;
     showAnagram(anagram, shuffledAnagrams.clue);
@@ -100,19 +106,24 @@ function startGame() {
 
     // on medium mode I want to shuffle through the mediumAnagrams object
     } else if (sessionStorage.getItem("gamemode") === "medium") {
-        shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
+        indexAnagram = [Math.floor(Math.random()*mediumAnagrams.length)];
+        shuffledAnagrams = mediumAnagrams[indexAnagram];
+        mediumAnagrams.splice(indexAnagram,1);
         anagram = createAnagram(shuffledAnagrams.answer)
         answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
 
     // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
     } else {
-        shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
+        indexAnagram = [Math.floor(Math.random()*hardAnagrams.length)];
+        shuffledAnagrams = hardAnagrams[indexAnagram];
+        hardAnagrams.splice(indexAnagram,1);
         anagram = createAnagram(shuffledAnagrams.answer)
         answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
 } anagramCount +=1;
 }
+
 
 function nextAnagram() {
 
@@ -121,7 +132,9 @@ function nextAnagram() {
 
     // on easy mode I want to shuffle through the easyAnagrams object take out the answer and use function to scramble the word to make the anagram
     if (sessionStorage.getItem("gamemode") === "easy") {
-    shuffledAnagrams = easyAnagrams[Math.floor(Math.random()*easyAnagrams.length)]
+    indexAnagram = [Math.floor(Math.random()*easyAnagrams.length)];
+    shuffledAnagrams = easyAnagrams[indexAnagram];
+    easyAnagrams.splice(indexAnagram,1);
     anagram = createAnagram(shuffledAnagrams.answer);
     answer = shuffledAnagrams.answer;
     showAnagram(anagram, shuffledAnagrams.clue);
@@ -129,14 +142,18 @@ function nextAnagram() {
 
     // on medium mode I want to shuffle through the mediumAnagrams object
     } else if (sessionStorage.getItem("gamemode") === "medium") {
-        shuffledAnagrams = mediumAnagrams[Math.floor(Math.random()*mediumAnagrams.length)]
+        indexAnagram = [Math.floor(Math.random()*mediumAnagrams.length)];
+        shuffledAnagrams = mediumAnagrams[indexAnagram];
+        mediumAnagrams.splice(indexAnagram,1);
         anagram = createAnagram(shuffledAnagrams.answer);
         answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
 
     // when it's neither on easy or medium I want to shuffle through the hardAnagrams object
     } else {
-        shuffledAnagrams = hardAnagrams[Math.floor(Math.random()*hardAnagrams.length)]
+        indexAnagram = [Math.floor(Math.random()*hardAnagrams.length)];
+        shuffledAnagrams = hardAnagrams[indexAnagram];
+        hardAnagrams.splice(indexAnagram,1);
         anagram = createAnagram(shuffledAnagrams.answer);
         answer = shuffledAnagrams.answer;
         showAnagram(anagram, shuffledAnagrams.clue);
@@ -189,6 +206,7 @@ var countdownTimer = setInterval(function() {
     timer.classList.remove("red-timer");
     timer.classList.remove("yellow-timer");
     timer.classList.add("green-timer");
+    if (anagramCount == 10) {isGameDone();}   
     nextAnagram();
     } else if( timeLeft >= 16 ) {
     timer.classList.add("green-timer")
@@ -234,16 +252,11 @@ function answerAnagram(answer) {
     
 }
 
-const isGameDone = setInterval(function() {
-    if (anagramCount == 10) {
-    console.log("if function is being reached")
-    if (timeLeft <= 0 || answerButtonClicked === true) {
+function isGameDone() {
         stopTimer();
         document.getElementById("game-over-modal").classList.add("reveal");
         finalScore();
-        clearInterval(isGameDone);
-    }}
-},1000)
+    }
 
 
 function finalScore() {
@@ -258,4 +271,7 @@ answerBtn.addEventListener('click', () => {
     answerAnagram(answer);
     clearInput();
     answerButtonClicked = true;
+    if (anagramCount == 10) {
+        isGameDone();
+    }
 })

@@ -286,7 +286,7 @@ li {
 }
 
 .home-btn {
-    margin: 20px 50px;
+    margin: 20px 20px;
     border-radius: 15px;
     background-color: #8c1aff;
     padding: 5px 5px 5px 5px;
@@ -295,7 +295,7 @@ li {
 }
 
 .restart-btn {
-    margin: 20px 50px;
+    margin: 20px 20px;
     border-radius: 15px;
     background-color: #8c1aff;
     padding: 5px 5px 5px 5px;
@@ -345,6 +345,7 @@ input[type=text] {
     flex-direction: column;
     font-size: 12px;
     border-radius: 20px;
+    pointer-events: none;
     color: #000;
     box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     visibility: hidden;
